@@ -32,6 +32,8 @@
 
         self.dataProvider = [self getDataProvider];
         
+        assert(self.dataProvider != nil);
+        
         [self setupDefaults];
     }
     return self;
@@ -60,6 +62,7 @@
 
 - (void)addDefaultConfig:(DXDALRequestConfigurationBlock)configBlock {
     assert(configBlock != nil);
+    
     [_defaultConfigBlocks addObject:configBlock];
 }
 

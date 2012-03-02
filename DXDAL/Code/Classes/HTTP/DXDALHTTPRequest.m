@@ -4,9 +4,7 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
-
 #import "DXDALHTTPRequest.h"
-
 
 @implementation DXDALHTTPRequest
 
@@ -15,7 +13,6 @@
 @synthesize httpBaseURL = _httpBaseURL;
 @synthesize defaultHTTPHeaders = _defaultHTTPHeaders;
 
-
 - (NSURLRequest *)urlRequest {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",_httpBaseURL, _httpPath]];
     
@@ -23,6 +20,5 @@
     
     return urlRequest;
 }
-
 
 @end

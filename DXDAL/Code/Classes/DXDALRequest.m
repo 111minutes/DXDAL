@@ -35,6 +35,9 @@
 }
 
 - (void)addParam:(NSString *)param withName:(NSString *)key {
+    assert(key != nil);
+    assert(param != nil);
+    
     [_params setObject:param forKey:key];
 }
 
@@ -65,6 +68,8 @@
 }
 
 - (void)didFinishWithResponse:(id)response {
+    assert(response != nil);
+    
     for (id block in _successHandlers) {
         DXDALRequestErrorHandler handler = block;
         handler(response);
@@ -72,6 +77,8 @@
 }
 
 - (void)didFailWithResponse:(id)response {
+    assert(response != nil);
+    
     for (id block in _errorHandlers) {
         DXDALRequestErrorHandler handler = block;
         handler(response);

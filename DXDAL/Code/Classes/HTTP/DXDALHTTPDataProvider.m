@@ -26,7 +26,8 @@
 }
 
 - (void)enqueueRequest:(DXDALRequest *)request {
-
+    assert(request != nil);
+    
     DXDALHTTPRequest *httpRequest = (DXDALHTTPRequest *) request;
 
     NSURLRequest *urlRequest = [httpRequest urlRequest];
@@ -41,7 +42,6 @@
 
             }
     ];
-
 
 
     [_queue addOperation:operation];
