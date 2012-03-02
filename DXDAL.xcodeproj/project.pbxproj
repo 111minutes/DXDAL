@@ -7,14 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD9CC4C81500249100FEBE10 /* DXDALRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4BC1500249100FEBE10 /* DXDALRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD9CC4C91500249100FEBE10 /* DXDALRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9CC4BD1500249100FEBE10 /* DXDALRequest.m */; };
+		AD9CC4CA1500249100FEBE10 /* DXDALRequestResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4BE1500249100FEBE10 /* DXDALRequestResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD9CC4CB1500249100FEBE10 /* DXDALRequestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9CC4BF1500249100FEBE10 /* DXDALRequestResponse.m */; };
+		AD9CC4CD1500249100FEBE10 /* DXDALConfigurableRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C21500249100FEBE10 /* DXDALConfigurableRequest.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		AD9CC4CE1500249100FEBE10 /* DXDALDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C31500249100FEBE10 /* DXDALDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD9CC4CF1500249100FEBE10 /* DXDALMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C41500249100FEBE10 /* DXDALMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD9CC4D01500249100FEBE10 /* DXDALParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C51500249100FEBE10 /* DXDALParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD9CC4D11500249100FEBE10 /* DXDALRequestFactoryProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C61500249100FEBE10 /* DXDALRequestFactoryProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD9CC4D4150026D500FEBE10 /* DXDAL.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C01500249100FEBE10 /* DXDAL.h */; };
+		AD9CC4D91500276200FEBE10 /* Pods-tests.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AD9CC4D81500276200FEBE10 /* Pods-tests.xcconfig */; };
+		AD9CC4DB1500277A00FEBE10 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9CC4DA1500277A00FEBE10 /* libPods-tests.a */; };
+		AD9CC4E0150027E700FEBE10 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9CC4DF150027E700FEBE10 /* SystemConfiguration.framework */; };
+		ADBA51B41500E4FB004F3003 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38EA15002300007349BC /* UIKit.framework */; };
+		ADBA51B51500E4FB004F3003 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38DA15002300007349BC /* Foundation.framework */; };
+		ADBA51B71500E4FB004F3003 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBA51B61500E4FB004F3003 /* CoreGraphics.framework */; };
+		ADBA51BD1500E4FB004F3003 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADBA51BB1500E4FB004F3003 /* InfoPlist.strings */; };
+		ADBA51BF1500E4FB004F3003 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA51BE1500E4FB004F3003 /* main.m */; };
+		ADBA51C31500E4FB004F3003 /* DXDALAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA51C21500E4FB004F3003 /* DXDALAppDelegate.m */; };
+		ADBA51C81500E58E004F3003 /* UsersAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A562657B /* UsersAPI.m */; };
+		ADBA51C91500E5A3004F3003 /* libDXDAL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38D715002300007349BC /* libDXDAL.a */; };
 		ADDC38DB15002300007349BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38DA15002300007349BC /* Foundation.framework */; };
-		ADDC38E115002300007349BC /* DXDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC38E015002300007349BC /* DXDAL.m */; };
 		ADDC38E915002300007349BC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38E815002300007349BC /* SenTestingKit.framework */; };
 		ADDC38EB15002300007349BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38EA15002300007349BC /* UIKit.framework */; };
 		ADDC38EC15002300007349BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38DA15002300007349BC /* Foundation.framework */; };
 		ADDC38EF15002300007349BC /* libDXDAL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38D715002300007349BC /* libDXDAL.a */; };
 		ADDC38F515002300007349BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADDC38F315002300007349BC /* InfoPlist.strings */; };
 		ADDC38F815002300007349BC /* DXDALTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC38F715002300007349BC /* DXDALTests.m */; };
+		F7DD19BE85CF4147A5626576 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB311C521B0F439C8B445314 /* libPods.a */; };
+		F7DD19BE85CF4147A5626578 /* DXDALRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626577 /* DXDALRequestFactory.m */; };
+		F7DD19BE85CF4147A562657A /* DXDALRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626579 /* DXDALRequestFactory.h */; };
+		F7DD19BE85CF4147A562657C /* UsersAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A562657B /* UsersAPI.m */; };
+		F7DD19BE85CF4147A5626580 /* DXDALHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A562657F /* DXDALHTTPRequest.m */; };
+		F7DD19BE85CF4147A5626582 /* DXDALHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626581 /* DXDALHTTPRequest.h */; };
+		F7DD19BE85CF4147A5626584 /* DXDALHTTPDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626583 /* DXDALHTTPDataProvider.m */; };
+		F7DD19BE85CF4147A5626586 /* DXDALHTTPDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626585 /* DXDALHTTPDataProvider.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,26 +56,67 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12036643CB3C4FCEA3528614 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		AD9CC4BC1500249100FEBE10 /* DXDALRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequest.h; sourceTree = "<group>"; };
+		AD9CC4BD1500249100FEBE10 /* DXDALRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequest.m; sourceTree = "<group>"; };
+		AD9CC4BE1500249100FEBE10 /* DXDALRequestResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestResponse.h; sourceTree = "<group>"; };
+		AD9CC4BF1500249100FEBE10 /* DXDALRequestResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestResponse.m; sourceTree = "<group>"; };
+		AD9CC4C01500249100FEBE10 /* DXDAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDAL.h; sourceTree = "<group>"; };
+		AD9CC4C21500249100FEBE10 /* DXDALConfigurableRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALConfigurableRequest.h; sourceTree = "<group>"; };
+		AD9CC4C31500249100FEBE10 /* DXDALDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALDataProvider.h; sourceTree = "<group>"; };
+		AD9CC4C41500249100FEBE10 /* DXDALMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALMapper.h; sourceTree = "<group>"; };
+		AD9CC4C51500249100FEBE10 /* DXDALParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALParser.h; sourceTree = "<group>"; };
+		AD9CC4C61500249100FEBE10 /* DXDALRequestFactoryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestFactoryProtocol.h; sourceTree = "<group>"; };
+		AD9CC4D81500276200FEBE10 /* Pods-tests.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-tests.xcconfig"; path = "../Pods/Pods-tests.xcconfig"; sourceTree = "<group>"; };
+		AD9CC4DA1500277A00FEBE10 /* libPods-tests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-tests.a"; path = "Pods/build/Release-iphoneos/libPods-tests.a"; sourceTree = "<group>"; };
+		AD9CC4DF150027E700FEBE10 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		ADBA51B21500E4FB004F3003 /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADBA51B61500E4FB004F3003 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ADBA51BA1500E4FB004F3003 /* TestProject-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestProject-Info.plist"; sourceTree = "<group>"; };
+		ADBA51BC1500E4FB004F3003 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ADBA51BE1500E4FB004F3003 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ADBA51C01500E4FB004F3003 /* TestProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestProject-Prefix.pch"; sourceTree = "<group>"; };
+		ADBA51C11500E4FB004F3003 /* DXDALAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXDALAppDelegate.h; sourceTree = "<group>"; };
+		ADBA51C21500E4FB004F3003 /* DXDALAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXDALAppDelegate.m; sourceTree = "<group>"; };
 		ADDC38D715002300007349BC /* libDXDAL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDXDAL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDC38DA15002300007349BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		ADDC38DE15002300007349BC /* DXDAL-Prefix.pch */ = {isa = PBXFileReference; path = "DXDAL-Prefix.pch"; sourceTree = "<group>"; };
-		ADDC38DF15002300007349BC /* DXDAL.h */ = {isa = PBXFileReference; path = DXDAL.h; sourceTree = "<group>"; };
-		ADDC38E015002300007349BC /* DXDAL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXDAL.m; sourceTree = "<group>"; };
+		ADDC38DE15002300007349BC /* DXDAL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DXDAL-Prefix.pch"; sourceTree = "<group>"; };
 		ADDC38E715002300007349BC /* DXDALTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DXDALTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDC38E815002300007349BC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		ADDC38EA15002300007349BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		ADDC38F215002300007349BC /* DXDALTests-Info.plist */ = {isa = PBXFileReference; path = "DXDALTests-Info.plist"; sourceTree = "<group>"; };
+		ADDC38F215002300007349BC /* DXDALTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DXDALTests-Info.plist"; sourceTree = "<group>"; };
 		ADDC38F415002300007349BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		ADDC38F615002300007349BC /* DXDALTests.h */ = {isa = PBXFileReference; path = DXDALTests.h; sourceTree = "<group>"; };
+		ADDC38F615002300007349BC /* DXDALTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXDALTests.h; sourceTree = "<group>"; };
 		ADDC38F715002300007349BC /* DXDALTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXDALTests.m; sourceTree = "<group>"; };
+		BB311C521B0F439C8B445314 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7DD19BE85CF4147A5626577 /* DXDALRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestFactory.m; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A5626579 /* DXDALRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestFactory.h; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A562657B /* UsersAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersAPI.m; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A562657D /* UsersAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersAPI.h; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A562657F /* DXDALHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALHTTPRequest.m; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A5626581 /* DXDALHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALHTTPRequest.h; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A5626583 /* DXDALHTTPDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALHTTPDataProvider.m; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A5626585 /* DXDALHTTPDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALHTTPDataProvider.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ADBA51AF1500E4FB004F3003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADBA51C91500E5A3004F3003 /* libDXDAL.a in Frameworks */,
+				ADBA51B41500E4FB004F3003 /* UIKit.framework in Frameworks */,
+				ADBA51B51500E4FB004F3003 /* Foundation.framework in Frameworks */,
+				ADBA51B71500E4FB004F3003 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADDC38D415002300007349BC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ADDC38DB15002300007349BC /* Foundation.framework in Frameworks */,
+				F7DD19BE85CF4147A5626576 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9CC4E0150027E700FEBE10 /* SystemConfiguration.framework in Frameworks */,
+				AD9CC4DB1500277A00FEBE10 /* libPods-tests.a in Frameworks */,
 				ADDC38E915002300007349BC /* SenTestingKit.framework in Frameworks */,
 				ADDC38EB15002300007349BC /* UIKit.framework in Frameworks */,
 				ADDC38EC15002300007349BC /* Foundation.framework in Frameworks */,
@@ -65,13 +136,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD9CC4BA1500249100FEBE10 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				AD9CC4BB1500249100FEBE10 /* Classes */,
+				AD9CC4C01500249100FEBE10 /* DXDAL.h */,
+				AD9CC4C11500249100FEBE10 /* Protocols */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		AD9CC4BB1500249100FEBE10 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F7DD19BE85CF4147A5626579 /* DXDALRequestFactory.h */,
+				F7DD19BE85CF4147A5626577 /* DXDALRequestFactory.m */,
+				AD9CC4BC1500249100FEBE10 /* DXDALRequest.h */,
+				AD9CC4BD1500249100FEBE10 /* DXDALRequest.m */,
+				AD9CC4BE1500249100FEBE10 /* DXDALRequestResponse.h */,
+				AD9CC4BF1500249100FEBE10 /* DXDALRequestResponse.m */,
+				F7DD19BE85CF4147A562657E /* HTTP */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AD9CC4C11500249100FEBE10 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AD9CC4C21500249100FEBE10 /* DXDALConfigurableRequest.h */,
+				AD9CC4C31500249100FEBE10 /* DXDALDataProvider.h */,
+				AD9CC4C41500249100FEBE10 /* DXDALMapper.h */,
+				AD9CC4C51500249100FEBE10 /* DXDALParser.h */,
+				AD9CC4C61500249100FEBE10 /* DXDALRequestFactoryProtocol.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		ADB1A5B315003BC9000A0774 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				ADB1A5B515003BD2000A0774 /* TestingClasses */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		ADB1A5B515003BD2000A0774 /* TestingClasses */ = {
+			isa = PBXGroup;
+			children = (
+				F7DD19BE85CF4147A562657D /* UsersAPI.h */,
+				F7DD19BE85CF4147A562657B /* UsersAPI.m */,
+			);
+			path = TestingClasses;
+			sourceTree = "<group>";
+		};
+		ADBA51B81500E4FB004F3003 /* TestProject */ = {
+			isa = PBXGroup;
+			children = (
+				ADBA51C11500E4FB004F3003 /* DXDALAppDelegate.h */,
+				ADBA51C21500E4FB004F3003 /* DXDALAppDelegate.m */,
+				ADBA51B91500E4FB004F3003 /* Supporting Files */,
+			);
+			path = TestProject;
+			sourceTree = "<group>";
+		};
+		ADBA51B91500E4FB004F3003 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADBA51BA1500E4FB004F3003 /* TestProject-Info.plist */,
+				ADBA51BB1500E4FB004F3003 /* InfoPlist.strings */,
+				ADBA51BE1500E4FB004F3003 /* main.m */,
+				ADBA51C01500E4FB004F3003 /* TestProject-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		ADDC38CC15002300007349BC = {
 			isa = PBXGroup;
 			children = (
 				ADDC38DC15002300007349BC /* DXDAL */,
 				ADDC38F015002300007349BC /* DXDALTests */,
+				ADBA51B81500E4FB004F3003 /* TestProject */,
 				ADDC38D915002300007349BC /* Frameworks */,
 				ADDC38D815002300007349BC /* Products */,
+				12036643CB3C4FCEA3528614 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +227,7 @@
 			children = (
 				ADDC38D715002300007349BC /* libDXDAL.a */,
 				ADDC38E715002300007349BC /* DXDALTests.octest */,
+				ADBA51B21500E4FB004F3003 /* TestProject.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,9 +235,13 @@
 		ADDC38D915002300007349BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD9CC4DF150027E700FEBE10 /* SystemConfiguration.framework */,
+				AD9CC4DA1500277A00FEBE10 /* libPods-tests.a */,
 				ADDC38DA15002300007349BC /* Foundation.framework */,
 				ADDC38E815002300007349BC /* SenTestingKit.framework */,
 				ADDC38EA15002300007349BC /* UIKit.framework */,
+				BB311C521B0F439C8B445314 /* libPods.a */,
+				ADBA51B61500E4FB004F3003 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,8 +249,7 @@
 		ADDC38DC15002300007349BC /* DXDAL */ = {
 			isa = PBXGroup;
 			children = (
-				ADDC38DF15002300007349BC /* DXDAL.h */,
-				ADDC38E015002300007349BC /* DXDAL.m */,
+				AD9CC4BA1500249100FEBE10 /* Code */,
 				ADDC38DD15002300007349BC /* Supporting Files */,
 			);
 			path = DXDAL;
@@ -115,6 +266,8 @@
 		ADDC38F015002300007349BC /* DXDALTests */ = {
 			isa = PBXGroup;
 			children = (
+				ADB1A5B315003BC9000A0774 /* Code */,
+				AD9CC4D81500276200FEBE10 /* Pods-tests.xcconfig */,
 				ADDC38F615002300007349BC /* DXDALTests.h */,
 				ADDC38F715002300007349BC /* DXDALTests.m */,
 				ADDC38F115002300007349BC /* Supporting Files */,
@@ -131,6 +284,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F7DD19BE85CF4147A562657E /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				F7DD19BE85CF4147A5626585 /* DXDALHTTPDataProvider.h */,
+				F7DD19BE85CF4147A5626583 /* DXDALHTTPDataProvider.m */,
+				F7DD19BE85CF4147A5626581 /* DXDALHTTPRequest.h */,
+				F7DD19BE85CF4147A562657F /* DXDALHTTPRequest.m */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -138,12 +302,40 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9CC4C81500249100FEBE10 /* DXDALRequest.h in Headers */,
+				AD9CC4CA1500249100FEBE10 /* DXDALRequestResponse.h in Headers */,
+				AD9CC4CE1500249100FEBE10 /* DXDALDataProvider.h in Headers */,
+				AD9CC4CF1500249100FEBE10 /* DXDALMapper.h in Headers */,
+				AD9CC4D01500249100FEBE10 /* DXDALParser.h in Headers */,
+				AD9CC4D11500249100FEBE10 /* DXDALRequestFactoryProtocol.h in Headers */,
+				AD9CC4CD1500249100FEBE10 /* DXDALConfigurableRequest.h in Headers */,
+				AD9CC4D4150026D500FEBE10 /* DXDAL.h in Headers */,
+				F7DD19BE85CF4147A562657A /* DXDALRequestFactory.h in Headers */,
+				F7DD19BE85CF4147A5626582 /* DXDALHTTPRequest.h in Headers */,
+				F7DD19BE85CF4147A5626586 /* DXDALHTTPDataProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		ADBA51B11500E4FB004F3003 /* TestProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADBA51C61500E4FB004F3003 /* Build configuration list for PBXNativeTarget "TestProject" */;
+			buildPhases = (
+				ADBA51AE1500E4FB004F3003 /* Sources */,
+				ADBA51AF1500E4FB004F3003 /* Frameworks */,
+				ADBA51B01500E4FB004F3003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestProject;
+			productName = TestProject;
+			productReference = ADBA51B21500E4FB004F3003 /* TestProject.app */;
+			productType = "com.apple.product-type.application";
+		};
 		ADDC38D615002300007349BC /* DXDAL */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADDC38FB15002300007349BC /* Build configuration list for PBXNativeTarget "DXDAL" */;
@@ -151,6 +343,7 @@
 				ADDC38D315002300007349BC /* Sources */,
 				ADDC38D415002300007349BC /* Frameworks */,
 				ADDC38D515002300007349BC /* Headers */,
+				B19030F0C3A84669B653909C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -169,6 +362,7 @@
 				ADDC38E315002300007349BC /* Frameworks */,
 				ADDC38E415002300007349BC /* Resources */,
 				ADDC38E515002300007349BC /* ShellScript */,
+				B19030F0C3A84669B653909C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,8 +380,9 @@
 		ADDC38CE15002300007349BC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = DXDAL;
 				LastUpgradeCheck = 0440;
-				ORGANIZATIONNAME = DIMALEX;
+				ORGANIZATIONNAME = 111Minutes;
 			};
 			buildConfigurationList = ADDC38D115002300007349BC /* Build configuration list for PBXProject "DXDAL" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -203,16 +398,26 @@
 			targets = (
 				ADDC38D615002300007349BC /* DXDAL */,
 				ADDC38E615002300007349BC /* DXDALTests */,
+				ADBA51B11500E4FB004F3003 /* TestProject */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ADBA51B01500E4FB004F3003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADBA51BD1500E4FB004F3003 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADDC38E415002300007349BC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ADDC38F515002300007349BC /* InfoPlist.strings in Resources */,
+				AD9CC4D91500276200FEBE10 /* Pods-tests.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,14 +437,42 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		B19030F0C3A84669B653909C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ADBA51AE1500E4FB004F3003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADBA51BF1500E4FB004F3003 /* main.m in Sources */,
+				ADBA51C31500E4FB004F3003 /* DXDALAppDelegate.m in Sources */,
+				ADBA51C81500E58E004F3003 /* UsersAPI.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADDC38D315002300007349BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDC38E115002300007349BC /* DXDAL.m in Sources */,
+				AD9CC4C91500249100FEBE10 /* DXDALRequest.m in Sources */,
+				AD9CC4CB1500249100FEBE10 /* DXDALRequestResponse.m in Sources */,
+				F7DD19BE85CF4147A5626578 /* DXDALRequestFactory.m in Sources */,
+				F7DD19BE85CF4147A5626580 /* DXDALHTTPRequest.m in Sources */,
+				F7DD19BE85CF4147A5626584 /* DXDALHTTPDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADDC38F815002300007349BC /* DXDALTests.m in Sources */,
+				F7DD19BE85CF4147A562657C /* UsersAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +496,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		ADBA51BB1500E4FB004F3003 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADBA51BC1500E4FB004F3003 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		ADDC38F315002300007349BC /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -273,6 +515,41 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ADBA51C41500E4FB004F3003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestProject/TestProject-Prefix.pch";
+				INFOPLIST_FILE = "TestProject/TestProject-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ADBA51C51500E4FB004F3003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestProject/TestProject-Prefix.pch";
+				INFOPLIST_FILE = "TestProject/TestProject-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		ADDC38F915002300007349BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -317,10 +594,12 @@
 		};
 		ADDC38FC15002300007349BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12036643CB3C4FCEA3528614 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/DXDAL.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DXDAL/DXDAL-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -329,10 +608,12 @@
 		};
 		ADDC38FD15002300007349BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12036643CB3C4FCEA3528614 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/DXDAL.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DXDAL/DXDAL-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -341,30 +622,38 @@
 		};
 		ADDC38FF15002300007349BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9CC4D81500276200FEBE10 /* Pods-tests.xcconfig */;
 			buildSettings = {
+				DSTROOT = /tmp/xcodeproj.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DXDAL/DXDAL-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "DXDALTests/DXDALTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
 		ADDC390015002300007349BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9CC4D81500276200FEBE10 /* Pods-tests.xcconfig */;
 			buildSettings = {
+				DSTROOT = /tmp/xcodeproj.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DXDAL/DXDAL-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "DXDALTests/DXDALTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -372,6 +661,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ADBA51C61500E4FB004F3003 /* Build configuration list for PBXNativeTarget "TestProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADBA51C41500E4FB004F3003 /* Debug */,
+				ADBA51C51500E4FB004F3003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		ADDC38D115002300007349BC /* Build configuration list for PBXProject "DXDAL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -388,6 +685,7 @@
 				ADDC38FD15002300007349BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADDC38FE15002300007349BC /* Build configuration list for PBXNativeTarget "DXDALTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +694,7 @@
 				ADDC390015002300007349BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,26 +7,40 @@
 //
 
 #import "DXDALTests.h"
+#import "UsersAPI.h"
+#import "DXDALRequest.h"
+#import "DXDALHTTPRequest.h"
+#import "OCMock.h"
 
 @implementation DXDALTests
 
-- (void)setUp
-{
-    [super setUp];
+- (void)testLogin {
     
-    // Set-up code here.
-}
+    UsersAPI *usersAPI = [UsersAPI new];
 
-- (void)tearDown
-{
-    // Tear-down code here.
+    NSAssert(usersAPI != nil, @"Can't create api");
     
-    [super tearDown];
-}
+    DXDALRequest *request = [usersAPI loginWithLogin:@"test" password:@"test"];
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in DXDALTests");
+    assert(request);
+    
+    __block BOOL success = NO;
+    
+    dispatch_semaphore_t sema = dispatch_semaphore_create(1);
+    
+    [request addSuccessHandler:^(DXDALRequestResponse *resp){
+        success = YES;
+        dispatch_semaphore_signal(sema);
+    }];        
+    
+    [request start];
+    
+    
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    
+    assert(success);
+    
 }
 
 @end
