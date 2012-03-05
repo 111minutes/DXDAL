@@ -11,6 +11,8 @@
 
 @interface DXDALRequest () <DXDALConfigurableRequest>
 
+@property (nonatomic, strong, readwrite) NSMutableDictionary *params;
+
 @end
 
 @implementation DXDALRequest {
@@ -18,8 +20,9 @@
     NSMutableArray *_errorHandlers;
     __unsafe_unretained id<DXDALDataProvider> _dataProvider;
 
-    NSMutableDictionary *_params;
 }
+
+@synthesize params = _params;
 
 - (id)initWithDataProvider:(id<DXDALDataProvider>)dataProvider {
     assert(dataProvider != nil);
@@ -71,7 +74,7 @@
     assert(response != nil);
     
     for (id block in _successHandlers) {
-        DXDALRequestErrorHandler handler = block;
+        DXDALRequestSuccesHandler handler = block;
         handler(response);
     }
 }

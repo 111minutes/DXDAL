@@ -18,6 +18,8 @@ typedef void (^DXDALRequestErrorHandler)(NSError *error);
 
 @interface DXDALRequest : NSObject 
 
+@property (nonatomic, strong, readonly) NSMutableDictionary *params;
+
 - (id)initWithDataProvider:(id<DXDALDataProvider>)dataProvider;
 
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler;

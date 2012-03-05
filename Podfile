@@ -7,4 +7,5 @@ dependency 'Reachability'
 target :tests, :exclusive=>true do
 	dependency 'Kiwi'
 	dependency 'OCMock'
+	dependency 'BlocksKit'
 end

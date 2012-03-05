@@ -19,7 +19,7 @@
     
     UsersAPI *api = [UsersAPI new];
     
-    DXDALRequest *request = [api loginWithLogin:@"login" password:@"password"];
+    DXDALRequest *request = [api loginWithLogin:@"zen" password:@"bugaga"];
     
     [request addSuccessHandler:^(DXDALRequestResponse *response){
         self.window.backgroundColor = [UIColor whiteColor];

@@ -9,8 +9,8 @@
 #import "DXDALTests.h"
 #import "UsersAPI.h"
 #import "DXDALRequest.h"
-#import "DXDALHTTPRequest.h"
 #import "OCMock.h"
+#import "BlocksKit.h"
 
 @implementation DXDALTests
 
@@ -20,7 +20,7 @@
 
     NSAssert(usersAPI != nil, @"Can't create api");
     
-    DXDALRequest *request = [usersAPI loginWithLogin:@"test" password:@"test"];
+    DXDALRequest *request = [usersAPI loginWithLogin:@"zen" password:@"bugaga2"];
 
     assert(request);
     

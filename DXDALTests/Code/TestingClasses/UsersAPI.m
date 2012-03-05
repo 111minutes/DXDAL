@@ -6,27 +6,23 @@
 
 
 #import "UsersAPI.h"
-#import "DXDALHTTPRequest.h"
-#import "DXDALHTTPDataProvider.h"
-
+#import "DXDALRequestHTTP.h"
+#import "DXDALDataProviderHTTP.h"
 
 @implementation UsersAPI
 
 - (id <DXDALDataProvider>)getDataProvider {
-    return [DXDALHTTPDataProvider new];
+    return [[DXDALDataProviderHTTP alloc] initWithBaseURL:[NSURL URLWithString:@"http://0.0.0.0:3000"]];
 }
 
 - (void)setupDefaults {
-   [self addDefaultConfig:^(DXDALHTTPRequest *request){
-       request.httpBaseURL = @"http://afnetworking.org";
-       request.defaultHTTPHeaders = [NSDictionary new];
-   }];
+    
 }
 
 - (DXDALRequest *)loginWithLogin:(NSString *)login password:(NSString *)password {
-    return [self buildRequestWithConfigBlock:^(DXDALHTTPRequest *request) {
+    return [self buildRequestWithConfigBlock:^(DXDALRequestHTTP *request) {
         request.httpMethod = @"Post";
-        request.httpPath = @"/user_session";
+        request.httpPath = @"/api/user_sessions";
 
         [request addParam:login withName:@"login"];
         [request addParam:password withName:@"password"];

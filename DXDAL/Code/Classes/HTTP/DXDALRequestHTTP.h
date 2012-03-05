@@ -9,13 +9,12 @@
 #import "DXDALRequest.h"
 
 
-@interface DXDALHTTPRequest : DXDALRequest
+@interface DXDALRequestHTTP : DXDALRequest
+
 
 @property(nonatomic, readwrite, strong) NSString *httpMethod;
 @property(nonatomic, readwrite, strong) NSString *httpPath;
 @property(nonatomic, readwrite, strong) NSString *httpBaseURL;
 @property(nonatomic, readwrite, strong) NSDictionary *defaultHTTPHeaders;
-
-- (NSURLRequest *)urlRequest;
 
 @end

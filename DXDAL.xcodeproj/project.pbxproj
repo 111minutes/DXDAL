@@ -39,10 +39,10 @@
 		F7DD19BE85CF4147A5626578 /* DXDALRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626577 /* DXDALRequestFactory.m */; };
 		F7DD19BE85CF4147A562657A /* DXDALRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626579 /* DXDALRequestFactory.h */; };
 		F7DD19BE85CF4147A562657C /* UsersAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A562657B /* UsersAPI.m */; };
-		F7DD19BE85CF4147A5626580 /* DXDALHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A562657F /* DXDALHTTPRequest.m */; };
-		F7DD19BE85CF4147A5626582 /* DXDALHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626581 /* DXDALHTTPRequest.h */; };
-		F7DD19BE85CF4147A5626584 /* DXDALHTTPDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626583 /* DXDALHTTPDataProvider.m */; };
-		F7DD19BE85CF4147A5626586 /* DXDALHTTPDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626585 /* DXDALHTTPDataProvider.h */; };
+		F7DD19BE85CF4147A5626580 /* DXDALRequestHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A562657F /* DXDALRequestHTTP.m */; };
+		F7DD19BE85CF4147A5626582 /* DXDALRequestHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626581 /* DXDALRequestHTTP.h */; };
+		F7DD19BE85CF4147A5626584 /* DXDALDataProviderHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626583 /* DXDALDataProviderHTTP.m */; };
+		F7DD19BE85CF4147A5626586 /* DXDALDataProviderHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626585 /* DXDALDataProviderHTTP.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,10 +93,10 @@
 		F7DD19BE85CF4147A5626579 /* DXDALRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestFactory.h; sourceTree = "<group>"; };
 		F7DD19BE85CF4147A562657B /* UsersAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersAPI.m; sourceTree = "<group>"; };
 		F7DD19BE85CF4147A562657D /* UsersAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersAPI.h; sourceTree = "<group>"; };
-		F7DD19BE85CF4147A562657F /* DXDALHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALHTTPRequest.m; sourceTree = "<group>"; };
-		F7DD19BE85CF4147A5626581 /* DXDALHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALHTTPRequest.h; sourceTree = "<group>"; };
-		F7DD19BE85CF4147A5626583 /* DXDALHTTPDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALHTTPDataProvider.m; sourceTree = "<group>"; };
-		F7DD19BE85CF4147A5626585 /* DXDALHTTPDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALHTTPDataProvider.h; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A562657F /* DXDALRequestHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestHTTP.m; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A5626581 /* DXDALRequestHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestHTTP.h; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A5626583 /* DXDALDataProviderHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALDataProviderHTTP.m; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A5626585 /* DXDALDataProviderHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALDataProviderHTTP.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +175,6 @@
 		ADB1A5B315003BC9000A0774 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				ADB1A5B515003BD2000A0774 /* TestingClasses */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -186,12 +185,14 @@
 				F7DD19BE85CF4147A562657D /* UsersAPI.h */,
 				F7DD19BE85CF4147A562657B /* UsersAPI.m */,
 			);
-			path = TestingClasses;
+			name = TestingClasses;
+			path = ../DXDALTests/Code/TestingClasses;
 			sourceTree = "<group>";
 		};
 		ADBA51B81500E4FB004F3003 /* TestProject */ = {
 			isa = PBXGroup;
 			children = (
+				ADB1A5B515003BD2000A0774 /* TestingClasses */,
 				ADBA51C11500E4FB004F3003 /* DXDALAppDelegate.h */,
 				ADBA51C21500E4FB004F3003 /* DXDALAppDelegate.m */,
 				ADBA51B91500E4FB004F3003 /* Supporting Files */,
@@ -287,10 +288,10 @@
 		F7DD19BE85CF4147A562657E /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
-				F7DD19BE85CF4147A5626585 /* DXDALHTTPDataProvider.h */,
-				F7DD19BE85CF4147A5626583 /* DXDALHTTPDataProvider.m */,
-				F7DD19BE85CF4147A5626581 /* DXDALHTTPRequest.h */,
-				F7DD19BE85CF4147A562657F /* DXDALHTTPRequest.m */,
+				F7DD19BE85CF4147A5626585 /* DXDALDataProviderHTTP.h */,
+				F7DD19BE85CF4147A5626583 /* DXDALDataProviderHTTP.m */,
+				F7DD19BE85CF4147A5626581 /* DXDALRequestHTTP.h */,
+				F7DD19BE85CF4147A562657F /* DXDALRequestHTTP.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -311,8 +312,8 @@
 				AD9CC4CD1500249100FEBE10 /* DXDALConfigurableRequest.h in Headers */,
 				AD9CC4D4150026D500FEBE10 /* DXDAL.h in Headers */,
 				F7DD19BE85CF4147A562657A /* DXDALRequestFactory.h in Headers */,
-				F7DD19BE85CF4147A5626582 /* DXDALHTTPRequest.h in Headers */,
-				F7DD19BE85CF4147A5626586 /* DXDALHTTPDataProvider.h in Headers */,
+				F7DD19BE85CF4147A5626582 /* DXDALRequestHTTP.h in Headers */,
+				F7DD19BE85CF4147A5626586 /* DXDALDataProviderHTTP.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,8 +472,8 @@
 				AD9CC4C91500249100FEBE10 /* DXDALRequest.m in Sources */,
 				AD9CC4CB1500249100FEBE10 /* DXDALRequestResponse.m in Sources */,
 				F7DD19BE85CF4147A5626578 /* DXDALRequestFactory.m in Sources */,
-				F7DD19BE85CF4147A5626580 /* DXDALHTTPRequest.m in Sources */,
-				F7DD19BE85CF4147A5626584 /* DXDALHTTPDataProvider.m in Sources */,
+				F7DD19BE85CF4147A5626580 /* DXDALRequestHTTP.m in Sources */,
+				F7DD19BE85CF4147A5626584 /* DXDALDataProviderHTTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +518,7 @@
 /* Begin XCBuildConfiguration section */
 		ADBA51C41500E4FB004F3003 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12036643CB3C4FCEA3528614 /* Pods.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -534,6 +536,7 @@
 		};
 		ADBA51C51500E4FB004F3003 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12036643CB3C4FCEA3528614 /* Pods.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -668,6 +671,7 @@
 				ADBA51C51500E4FB004F3003 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADDC38D115002300007349BC /* Build configuration list for PBXProject "DXDAL" */ = {
 			isa = XCConfigurationList;

@@ -9,6 +9,8 @@
 #import "DXDALDataProvider.h"
 
 
-@interface DXDALHTTPDataProvider : NSObject <DXDALDataProvider>
+@interface DXDALDataProviderHTTP : NSObject <DXDALDataProvider> 
+
+- (id)initWithBaseURL:(NSURL*)aBaseURL;
 
 @end
