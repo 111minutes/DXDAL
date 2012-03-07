@@ -35,10 +35,18 @@
 	AFHTTPRequestOperation *operation = [_httpClient HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [aRequest didFinishWithResponse:operation.responseString];
     } 
-                                                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                          [aRequest didFailWithResponse:operation.responseString];
-                                                                          
-                                                                      }];
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     NSMutableDictionary *userInfo = [[error userInfo] mutableCopy];
+     
+     [userInfo setObject:operation.responseString forKey:@"ErrorMessage"];
+     
+     NSError *innerError = [[NSError alloc] initWithDomain:@"DXDAL" 
+                                                      code:operation.response.statusCode 
+                                                  userInfo:userInfo];
+     
+     [aRequest didFailWithResponse:innerError];
+     
+    }];
     [_httpClient enqueueHTTPRequestOperation:operation];
 }
 
