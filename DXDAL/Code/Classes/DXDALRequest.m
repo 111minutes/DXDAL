@@ -46,12 +46,12 @@
 
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler {
     assert(handler != nil);
-    [_successHandlers addObject:handler];
+    [_successHandlers addObject:[handler copy]];
 }
 
 - (void)addErrorHandler:(DXDALRequestErrorHandler)handler {
     assert(handler != nil);
-    [_errorHandlers addObject:handler];
+    [_errorHandlers addObject:[handler copy]];
 }
 
 - (void)start {

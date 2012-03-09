@@ -43,8 +43,7 @@
         id result = [parser parseJSON:operation.responseString fromRequest:httpRequest];
         
         [aRequest didFinishWithResponse:result];
-    } 
-    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSMutableDictionary *userInfo = [[error userInfo] mutableCopy];
 
