@@ -20,7 +20,7 @@
     if ([jsonResult isKindOfClass:[NSArray class]]) {
         result = [NSMutableArray new];
         for (NSDictionary *dict in jsonResult) {
-            NSObject *obj = [httpRequest.entityClass objectFromJSONObject:dict mapping:httpRequest.mapping];
+            NSObject *obj = [httpRequest.entityClass objectFromJSONObject:dict mapping:[httpRequest.entityClass mapping]];
             [result addObject:obj];
         }
     } else {
