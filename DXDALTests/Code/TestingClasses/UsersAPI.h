@@ -7,12 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import "DXDALRequestFactory.h"
-
+#import "User.h"
 
 @interface UsersAPI : DXDALRequestFactory
 
 - (DXDALRequest *)loginWithLogin:(NSString *)login password:(NSString *)password;
-- (DXDALRequest *)getUsersList;
-- (DXDALRequest *)logout;
+- (DXDALRequest *)signUpWithUser:(User*)user;
 
 @end

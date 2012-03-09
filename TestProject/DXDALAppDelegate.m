@@ -9,6 +9,8 @@
 #import "DXDALAppDelegate.h"
 #import "UsersAPI.h"
 #import "DXDALRequest.h"
+#import "User.h"
+
 @implementation DXDALAppDelegate
 
 @synthesize window = _window;
@@ -19,19 +21,29 @@
     
     UsersAPI *api = [UsersAPI new];
     
-    DXDALRequest *request = [api loginWithLogin:@"zen" password:@"bugaga"];
+    User *u = [User new];
     
-    [request addSuccessHandler:^(DXDALRequestResponse *response){
-        self.window.backgroundColor = [UIColor whiteColor];
+    u.name = @"test3";
+    u.email = @"test3@asd.com";
+    u.password = @"qweqweqwe";
+    u.passwordConfirmation = @"qweqweqwe";
+    u.username = @"test3";
+    u.age = @"100";
+    
+    DXDALRequest *request = [api signUpWithUser:u];
+    
+    [request addSuccessHandler:^(id response){
+        NSLog(@"Response = %@", response);
     }];
     
     [request addErrorHandler:^(NSError *error){
-        self.window.backgroundColor = [UIColor redColor];
+        NSLog(@"Error = %@", [error userInfo]);
     }];
     
     [request start];
     
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

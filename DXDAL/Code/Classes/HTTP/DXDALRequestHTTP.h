@@ -14,7 +14,8 @@
 
 @property(nonatomic, readwrite, strong) NSString *httpMethod;
 @property(nonatomic, readwrite, strong) NSString *httpPath;
-@property(nonatomic, readwrite, strong) NSString *httpBaseURL;
 @property(nonatomic, readwrite, strong) NSDictionary *defaultHTTPHeaders;
 
+@property (nonatomic, assign) Class entityClass;
+@property (nonatomic, strong) NSDictionary *mapping;
 @end

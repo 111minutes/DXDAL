@@ -8,6 +8,7 @@
 #import "UsersAPI.h"
 #import "DXDALRequestHTTP.h"
 #import "DXDALDataProviderHTTP.h"
+#import "UserSession.h"
 
 @implementation UsersAPI
 
@@ -23,21 +24,40 @@
     return [self buildRequestWithConfigBlock:^(DXDALRequestHTTP *request) {
         request.httpMethod = @"Post";
         request.httpPath = @"/api/user_sessions";
-
-        [request addParam:login withName:@"login"];
+        
+        request.entityClass = [UserSession class];
+        
+        request.mapping = [NSDictionary dictionaryWithObject:@"token" forKey:@"token"];
+        
+        [request addParam:login withName:@"email"];
         [request addParam:password withName:@"password"];
     }];
 }
 
-- (DXDALRequest *)getUsersList {
-    return [self buildRequestWithConfigBlock:^(DXDALRequest *request) {
-
-    }];
-}
-
-- (DXDALRequest *)logout {
-    return [self buildRequestWithConfigBlock:^(DXDALRequest *request) {
-
+- (DXDALRequest *)signUpWithUser:(User*)user; {
+    return [self buildRequestWithConfigBlock:^(DXDALRequestHTTP *request) {
+        request.httpMethod = @"Post";
+        request.httpPath = @"/api/users";
+        
+        request.entityClass = [User class];
+        
+        NSMutableDictionary *mapping = [NSMutableDictionary new];
+        
+        [mapping setObject:@"email" forKey:@"email"];
+        [mapping setObject:@"name" forKey:@"name"];
+        [mapping setObject:@"username" forKey:@"username"];
+        [mapping setObject:@"password" forKey:@"password"];
+        [mapping setObject:@"password_confirmation" forKey:@"passwordConfirmation"];
+        [mapping setObject:@"age" forKey:@"age"];
+        
+        request.mapping = mapping;
+        
+        [request addParam:user.name withName:@"user[name]"];
+        [request addParam:user.email withName:@"user[email"];
+        [request addParam:user.age withName:@"user[age"];
+        [request addParam:user.username withName:@"user[username"];
+        [request addParam:user.password withName:@"user[password"];
+        [request addParam:user.passwordConfirmation withName:@"user[password_confirmation"];
     }];
 }
 

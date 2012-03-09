@@ -10,8 +10,8 @@
 
 @synthesize httpMethod = _httpMethod;
 @synthesize httpPath = _httpPath;
-@synthesize httpBaseURL = _httpBaseURL;
 @synthesize defaultHTTPHeaders = _defaultHTTPHeaders;
+@synthesize entityClass, mapping;
 
 - (NSString*)httpMethod {
     return [_httpMethod uppercaseString];

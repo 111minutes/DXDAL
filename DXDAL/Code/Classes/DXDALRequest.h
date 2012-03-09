@@ -12,7 +12,7 @@
 
 @class DXDALRequestResponse;
 
-typedef void (^DXDALRequestSuccesHandler)(DXDALRequestResponse *response);
+typedef void (^DXDALRequestSuccesHandler)(id response);
 
 typedef void (^DXDALRequestErrorHandler)(NSError *error);
 

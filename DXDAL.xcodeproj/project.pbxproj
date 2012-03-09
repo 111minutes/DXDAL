@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD9982A0150A1358005D8D1F /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = AD99829F150A1358005D8D1F /* UserSession.m */; };
+		AD9982A3150A1B41005D8D1F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9982A2150A1B41005D8D1F /* User.m */; };
+		AD9982A6150A27BA005D8D1F /* DXDALResponseParserJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9982A4150A27B9005D8D1F /* DXDALResponseParserJSON.h */; };
+		AD9982A7150A27BA005D8D1F /* DXDALResponseParserJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9982A5150A27BA005D8D1F /* DXDALResponseParserJSON.m */; };
 		AD9CC4C81500249100FEBE10 /* DXDALRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4BC1500249100FEBE10 /* DXDALRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD9CC4C91500249100FEBE10 /* DXDALRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9CC4BD1500249100FEBE10 /* DXDALRequest.m */; };
 		AD9CC4CA1500249100FEBE10 /* DXDALRequestResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4BE1500249100FEBE10 /* DXDALRequestResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -17,7 +21,6 @@
 		AD9CC4D01500249100FEBE10 /* DXDALParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C51500249100FEBE10 /* DXDALParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD9CC4D11500249100FEBE10 /* DXDALRequestFactoryProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C61500249100FEBE10 /* DXDALRequestFactoryProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD9CC4D4150026D500FEBE10 /* DXDAL.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C01500249100FEBE10 /* DXDAL.h */; };
-		AD9CC4D91500276200FEBE10 /* Pods-tests.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AD9CC4D81500276200FEBE10 /* Pods-tests.xcconfig */; };
 		AD9CC4DB1500277A00FEBE10 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9CC4DA1500277A00FEBE10 /* libPods-tests.a */; };
 		AD9CC4E0150027E700FEBE10 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9CC4DF150027E700FEBE10 /* SystemConfiguration.framework */; };
 		ADBA51B41500E4FB004F3003 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38EA15002300007349BC /* UIKit.framework */; };
@@ -33,8 +36,6 @@
 		ADDC38EB15002300007349BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38EA15002300007349BC /* UIKit.framework */; };
 		ADDC38EC15002300007349BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38DA15002300007349BC /* Foundation.framework */; };
 		ADDC38EF15002300007349BC /* libDXDAL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38D715002300007349BC /* libDXDAL.a */; };
-		ADDC38F515002300007349BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADDC38F315002300007349BC /* InfoPlist.strings */; };
-		ADDC38F815002300007349BC /* DXDALTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC38F715002300007349BC /* DXDALTests.m */; };
 		F7DD19BE85CF4147A5626576 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB311C521B0F439C8B445314 /* libPods.a */; };
 		F7DD19BE85CF4147A5626578 /* DXDALRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626577 /* DXDALRequestFactory.m */; };
 		F7DD19BE85CF4147A562657A /* DXDALRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626579 /* DXDALRequestFactory.h */; };
@@ -57,6 +58,12 @@
 
 /* Begin PBXFileReference section */
 		12036643CB3C4FCEA3528614 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		AD99829E150A1358005D8D1F /* UserSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSession.h; sourceTree = "<group>"; };
+		AD99829F150A1358005D8D1F /* UserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSession.m; sourceTree = "<group>"; };
+		AD9982A1150A1B41005D8D1F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		AD9982A2150A1B41005D8D1F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		AD9982A4150A27B9005D8D1F /* DXDALResponseParserJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALResponseParserJSON.h; sourceTree = "<group>"; };
+		AD9982A5150A27BA005D8D1F /* DXDALResponseParserJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALResponseParserJSON.m; sourceTree = "<group>"; };
 		AD9CC4BC1500249100FEBE10 /* DXDALRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequest.h; sourceTree = "<group>"; };
 		AD9CC4BD1500249100FEBE10 /* DXDALRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequest.m; sourceTree = "<group>"; };
 		AD9CC4BE1500249100FEBE10 /* DXDALRequestResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestResponse.h; sourceTree = "<group>"; };
@@ -67,7 +74,6 @@
 		AD9CC4C41500249100FEBE10 /* DXDALMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALMapper.h; sourceTree = "<group>"; };
 		AD9CC4C51500249100FEBE10 /* DXDALParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALParser.h; sourceTree = "<group>"; };
 		AD9CC4C61500249100FEBE10 /* DXDALRequestFactoryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestFactoryProtocol.h; sourceTree = "<group>"; };
-		AD9CC4D81500276200FEBE10 /* Pods-tests.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-tests.xcconfig"; path = "../Pods/Pods-tests.xcconfig"; sourceTree = "<group>"; };
 		AD9CC4DA1500277A00FEBE10 /* libPods-tests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-tests.a"; path = "Pods/build/Release-iphoneos/libPods-tests.a"; sourceTree = "<group>"; };
 		AD9CC4DF150027E700FEBE10 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		ADBA51B21500E4FB004F3003 /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,10 +90,6 @@
 		ADDC38E715002300007349BC /* DXDALTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DXDALTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDC38E815002300007349BC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		ADDC38EA15002300007349BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		ADDC38F215002300007349BC /* DXDALTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DXDALTests-Info.plist"; sourceTree = "<group>"; };
-		ADDC38F415002300007349BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		ADDC38F615002300007349BC /* DXDALTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXDALTests.h; sourceTree = "<group>"; };
-		ADDC38F715002300007349BC /* DXDALTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXDALTests.m; sourceTree = "<group>"; };
 		BB311C521B0F439C8B445314 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DD19BE85CF4147A5626577 /* DXDALRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestFactory.m; sourceTree = "<group>"; };
 		F7DD19BE85CF4147A5626579 /* DXDALRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestFactory.h; sourceTree = "<group>"; };
@@ -172,16 +174,13 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		ADB1A5B315003BC9000A0774 /* Code */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Code;
-			sourceTree = "<group>";
-		};
 		ADB1A5B515003BD2000A0774 /* TestingClasses */ = {
 			isa = PBXGroup;
 			children = (
+				AD9982A1150A1B41005D8D1F /* User.h */,
+				AD9982A2150A1B41005D8D1F /* User.m */,
+				AD99829E150A1358005D8D1F /* UserSession.h */,
+				AD99829F150A1358005D8D1F /* UserSession.m */,
 				F7DD19BE85CF4147A562657D /* UsersAPI.h */,
 				F7DD19BE85CF4147A562657B /* UsersAPI.m */,
 			);
@@ -215,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				ADDC38DC15002300007349BC /* DXDAL */,
-				ADDC38F015002300007349BC /* DXDALTests */,
 				ADBA51B81500E4FB004F3003 /* TestProject */,
 				ADDC38D915002300007349BC /* Frameworks */,
 				ADDC38D815002300007349BC /* Products */,
@@ -264,27 +262,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ADDC38F015002300007349BC /* DXDALTests */ = {
-			isa = PBXGroup;
-			children = (
-				ADB1A5B315003BC9000A0774 /* Code */,
-				AD9CC4D81500276200FEBE10 /* Pods-tests.xcconfig */,
-				ADDC38F615002300007349BC /* DXDALTests.h */,
-				ADDC38F715002300007349BC /* DXDALTests.m */,
-				ADDC38F115002300007349BC /* Supporting Files */,
-			);
-			path = DXDALTests;
-			sourceTree = "<group>";
-		};
-		ADDC38F115002300007349BC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				ADDC38F215002300007349BC /* DXDALTests-Info.plist */,
-				ADDC38F315002300007349BC /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		F7DD19BE85CF4147A562657E /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +269,8 @@
 				F7DD19BE85CF4147A5626583 /* DXDALDataProviderHTTP.m */,
 				F7DD19BE85CF4147A5626581 /* DXDALRequestHTTP.h */,
 				F7DD19BE85CF4147A562657F /* DXDALRequestHTTP.m */,
+				AD9982A4150A27B9005D8D1F /* DXDALResponseParserJSON.h */,
+				AD9982A5150A27BA005D8D1F /* DXDALResponseParserJSON.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -314,6 +293,7 @@
 				F7DD19BE85CF4147A562657A /* DXDALRequestFactory.h in Headers */,
 				F7DD19BE85CF4147A5626582 /* DXDALRequestHTTP.h in Headers */,
 				F7DD19BE85CF4147A5626586 /* DXDALDataProviderHTTP.h in Headers */,
+				AD9982A6150A27BA005D8D1F /* DXDALResponseParserJSON.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,8 +397,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDC38F515002300007349BC /* InfoPlist.strings in Resources */,
-				AD9CC4D91500276200FEBE10 /* Pods-tests.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +440,8 @@
 				ADBA51BF1500E4FB004F3003 /* main.m in Sources */,
 				ADBA51C31500E4FB004F3003 /* DXDALAppDelegate.m in Sources */,
 				ADBA51C81500E58E004F3003 /* UsersAPI.m in Sources */,
+				AD9982A0150A1358005D8D1F /* UserSession.m in Sources */,
+				AD9982A3150A1B41005D8D1F /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +454,7 @@
 				F7DD19BE85CF4147A5626578 /* DXDALRequestFactory.m in Sources */,
 				F7DD19BE85CF4147A5626580 /* DXDALRequestHTTP.m in Sources */,
 				F7DD19BE85CF4147A5626584 /* DXDALDataProviderHTTP.m in Sources */,
+				AD9982A7150A27BA005D8D1F /* DXDALResponseParserJSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +462,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDC38F815002300007349BC /* DXDALTests.m in Sources */,
 				F7DD19BE85CF4147A562657C /* UsersAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,14 +481,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				ADBA51BC1500E4FB004F3003 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		ADDC38F315002300007349BC /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ADDC38F415002300007349BC /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -625,7 +597,6 @@
 		};
 		ADDC38FF15002300007349BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD9CC4D81500276200FEBE10 /* Pods-tests.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/xcodeproj.dst;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -644,7 +615,6 @@
 		};
 		ADDC390015002300007349BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD9CC4D81500276200FEBE10 /* Pods-tests.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/xcodeproj.dst;
 				FRAMEWORK_SEARCH_PATHS = (
