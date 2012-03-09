@@ -47,8 +47,13 @@
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSMutableDictionary *userInfo = [[error userInfo] mutableCopy];
-        
-        [userInfo setObject:[operation.responseString objectFromJSONString] forKey:@"ErrorMessage"];
+
+        NSDictionary *serverErrorMessage = [operation.responseString objectFromJSONString];
+
+        if (serverErrorMessage) {
+            [userInfo setObject:serverErrorMessage forKey:@"ErrorMessage"];
+        }
+
      
         NSError *innerError = [[NSError alloc] initWithDomain:@"DXDAL" 
                                                       code:operation.response.statusCode 
