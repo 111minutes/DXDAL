@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "DXDALRequest.h"
 
+@protocol DXDALResponseParser;
+
 
 @interface DXDALRequestHTTP : DXDALRequest
 
@@ -18,4 +20,5 @@
 
 @property (nonatomic, assign) Class entityClass;
 @property (nonatomic, strong) NSDictionary *mapping;
+@property (nonatomic, strong) id<DXDALResponseParser> parser;
 @end

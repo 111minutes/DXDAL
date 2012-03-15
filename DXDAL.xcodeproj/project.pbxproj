@@ -44,6 +44,7 @@
 		F7DD19BE85CF4147A5626582 /* DXDALRequestHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626581 /* DXDALRequestHTTP.h */; };
 		F7DD19BE85CF4147A5626584 /* DXDALDataProviderHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626583 /* DXDALDataProviderHTTP.m */; };
 		F7DD19BE85CF4147A5626586 /* DXDALDataProviderHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626585 /* DXDALDataProviderHTTP.h */; };
+		F7DD19BE85CF4147A5626588 /* DXDALResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626587 /* DXDALResponseParser.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		F7DD19BE85CF4147A5626581 /* DXDALRequestHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestHTTP.h; sourceTree = "<group>"; };
 		F7DD19BE85CF4147A5626583 /* DXDALDataProviderHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALDataProviderHTTP.m; sourceTree = "<group>"; };
 		F7DD19BE85CF4147A5626585 /* DXDALDataProviderHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALDataProviderHTTP.h; sourceTree = "<group>"; };
+		F7DD19BE85CF4147A5626587 /* DXDALResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALResponseParser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +267,7 @@
 		F7DD19BE85CF4147A562657E /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
+				F7DD19BE85CF4147A5626587 /* DXDALResponseParser.h */,
 				F7DD19BE85CF4147A5626585 /* DXDALDataProviderHTTP.h */,
 				F7DD19BE85CF4147A5626583 /* DXDALDataProviderHTTP.m */,
 				F7DD19BE85CF4147A5626581 /* DXDALRequestHTTP.h */,
@@ -294,6 +297,7 @@
 				F7DD19BE85CF4147A5626582 /* DXDALRequestHTTP.h in Headers */,
 				F7DD19BE85CF4147A5626586 /* DXDALDataProviderHTTP.h in Headers */,
 				AD9982A6150A27BA005D8D1F /* DXDALResponseParserJSON.h in Headers */,
+				F7DD19BE85CF4147A5626588 /* DXDALResponseParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

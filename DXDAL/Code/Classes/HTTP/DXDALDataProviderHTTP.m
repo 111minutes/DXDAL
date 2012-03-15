@@ -13,15 +13,12 @@
 
 @implementation DXDALDataProviderHTTP {
     AFHTTPClient *_httpClient;
-    DXDALResponseParserJSON *_responseParser;
-    
 }
 
 - (id)initWithBaseURL:(NSURL*)aBaseURL {
     self = [super init];
     if (self) {
         _httpClient = [[AFHTTPClient alloc] initWithBaseURL:aBaseURL];
-        _responseParser = [DXDALResponseParserJSON new];
     }
     return self;
 }
@@ -32,15 +29,13 @@
 
 - (void)enqueueRequest:(DXDALRequest *)aRequest {
     assert(aRequest != nil);
-    
+
     DXDALRequestHTTP *httpRequest = (DXDALRequestHTTP*)aRequest;
     
     NSURLRequest *urlRequest = [_httpClient requestWithMethod:httpRequest.httpMethod path:httpRequest.httpPath parameters:httpRequest.params];
-    
-    DXDALResponseParserJSON *parser = _responseParser;
-    
+
 	AFHTTPRequestOperation *operation = [_httpClient HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id result = [parser parseJSON:operation.responseString fromRequest:httpRequest];
+        id result = [httpRequest.parser parseJSON:operation.responseString withEntityClass:httpRequest.entityClass];
         
         [aRequest didFinishWithResponse:result];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
