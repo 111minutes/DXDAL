@@ -18,6 +18,7 @@ typedef void (^DXDALRequestConfigurationBlock)(id request);
 - (id <DXDALDataProvider>)getDataProvider;
 
 - (DXDALRequest*)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock;
+- (DXDALRequest*)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock requestClass:(Class)RequestClass;
 
 - (void)addDefaultConfig:(DXDALRequestConfigurationBlock)configBlock;
 
