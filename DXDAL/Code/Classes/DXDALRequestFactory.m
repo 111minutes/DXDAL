@@ -40,9 +40,19 @@
 }
 
 - (DXDALRequest *)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock {
+	return [self buildRequestWithConfigBlock:configBlock requestClass:nil];
+}
+
+- (DXDALRequest *)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock requestClass:(Class)RequestClass {
     assert(configBlock != nil);
 
-    DXDALRequest *request = [self.dataProvider prepareRequest];
+	DXDALRequest *request = nil;
+
+	if(RequestClass) {
+		request = [[RequestClass alloc] initWithDataProvider:self.dataProvider];
+	} else {
+		request = [self.dataProvider prepareRequest];
+	}
 
     assert(request != nil);
 
