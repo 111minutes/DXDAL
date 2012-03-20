@@ -3,7 +3,7 @@ platform :ios
 dependency 'JSONKit'
 dependency 'AFNetworking'
 dependency 'Reachability'
-dependency 'JTObjectMapping'
+dependency 'JTObjectMapping-Fork'
 
 target :tests, :exclusive=>true do
 	dependency 'Kiwi'
