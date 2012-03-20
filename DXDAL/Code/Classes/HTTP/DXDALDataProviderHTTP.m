@@ -31,8 +31,14 @@
     assert(aRequest != nil);
 
     DXDALRequestHTTP *httpRequest = (DXDALRequestHTTP*)aRequest;
+    if (httpRequest.defaultHTTPHeaders){
+        for (NSString *key in [httpRequest.defaultHTTPHeaders allKeys]){
+            [_httpClient setDefaultHeader:key value:[httpRequest.defaultHTTPHeaders objectForKey:key]];
+        }
+    }
     
     NSURLRequest *urlRequest = [_httpClient requestWithMethod:httpRequest.httpMethod path:httpRequest.httpPath parameters:httpRequest.params];
+    NSLog(@"start request: %@", [urlRequest URL]);
 
 	AFHTTPRequestOperation *operation = [_httpClient HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id result = [httpRequest.parser parseJSON:operation.responseString withEntityClass:httpRequest.entityClass];
