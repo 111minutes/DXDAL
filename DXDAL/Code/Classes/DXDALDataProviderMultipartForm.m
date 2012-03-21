@@ -48,13 +48,15 @@
     __block NSString *videoURL = httpRequest.fileURLstring;
     __block NSInteger prevNotificationBytesCount = 0;
     [operation setUploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
-
+        
         BOOL isNeedSendNotification = NO;
         
         NSMutableDictionary *params = nil;
         
         int part = totalBytesExpectedToWrite / 20;
-        if (totalBytesWritten - prevNotificationBytesCount > part) {
+        
+        if (totalBytesWritten == totalBytesExpectedToWrite || totalBytesWritten - prevNotificationBytesCount > part) {
+            //            NSLog(@"File size kb = %d", totalBytesExpectedToWrite/1024);
             prevNotificationBytesCount = totalBytesWritten;
             isNeedSendNotification = YES;
         }
@@ -62,7 +64,8 @@
         if (isNeedSendNotification) {
             params = [NSMutableDictionary new];
             [params setValue:videoURL forKey:VideoNotificationURL];
-            [params setValue:[NSNumber numberWithFloat:totalBytesWritten/totalBytesExpectedToWrite] forKey:VideoNotificationProgress];
+            float value = totalBytesWritten;
+            [params setValue:[NSNumber numberWithFloat:value/totalBytesExpectedToWrite] forKey:VideoNotificationProgress];
             
             prevNotificationBytesCount = totalBytesWritten;
             
