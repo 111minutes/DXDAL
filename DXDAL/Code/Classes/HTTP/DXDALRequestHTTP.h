@@ -21,4 +21,5 @@
 @property (nonatomic, assign) Class entityClass;
 @property (nonatomic, strong) NSDictionary *mapping;
 @property (nonatomic, strong) id<DXDALResponseParser> parser;
+
 @end
