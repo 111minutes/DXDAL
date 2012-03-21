@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "DXDALDataProvider.h"
+#import "DXDALDataProviderHTTP.h"
 #import "DXDALRequest.h"
 
-@interface DXDALDataProviderMultipartForm : NSObject <DXDALDataProvider>
+@interface DXDALDataProviderMultipartForm : DXDALDataProviderHTTP
 
 
 @end

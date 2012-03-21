@@ -5,7 +5,6 @@
 //
 
 
-
 @class DXDALRequest;
 
 @protocol DXDALDataProvider <NSObject>
@@ -13,5 +12,7 @@
 - (DXDALRequest*)prepareRequest;
 
 - (void)enqueueRequest:(DXDALRequest*)request;
+
+- (NSURLRequest*)urlRequestFromRequest:(DXDALRequest*) request;
 
 @end

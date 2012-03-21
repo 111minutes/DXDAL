@@ -11,9 +11,8 @@
 #import "DXDALResponseParserJSON.h"   
 #import "JSONKit.h"
 
-@implementation DXDALDataProviderHTTP {
-    AFHTTPClient *_httpClient;
-}
+@implementation DXDALDataProviderHTTP
+@synthesize httpClient = _httpClient;
 
 - (id)initWithBaseURL:(NSURL*)aBaseURL {
     self = [super init];
@@ -37,7 +36,7 @@
         }
     }
     
-    NSURLRequest *urlRequest = [_httpClient requestWithMethod:httpRequest.httpMethod path:httpRequest.httpPath parameters:httpRequest.params];
+    NSURLRequest *urlRequest = [self urlRequestFromRequest:httpRequest];
     NSLog(@"start request: %@", [urlRequest URL]);
 
 	AFHTTPRequestOperation *operation = [_httpClient HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -64,6 +63,12 @@
     }];
     
     [_httpClient enqueueHTTPRequestOperation:operation];
+}
+
+- (NSURLRequest*)urlRequestFromRequest:(DXDALRequest*) request {
+    DXDALRequestHTTP *httpRequest = (DXDALRequestHTTP*) request;
+    NSURLRequest *urlRequest = [_httpClient requestWithMethod:httpRequest.httpMethod path:httpRequest.httpPath parameters:httpRequest.params];
+    return urlRequest;
 }
 
 

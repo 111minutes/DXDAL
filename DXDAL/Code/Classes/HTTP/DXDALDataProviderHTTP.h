@@ -7,10 +7,13 @@
 
 #import <Foundation/Foundation.h>
 #import "DXDALDataProvider.h"
+#import "AFHTTPClient.h"
 
 
 @interface DXDALDataProviderHTTP : NSObject <DXDALDataProvider> 
 
 - (id)initWithBaseURL:(NSURL*)aBaseURL;
+
+@property (nonatomic, strong) AFHTTPClient *httpClient;
 
 @end
