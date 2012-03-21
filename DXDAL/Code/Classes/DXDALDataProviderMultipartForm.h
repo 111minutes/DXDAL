@@ -11,6 +11,10 @@
 #import "DXDALDataProviderHTTP.h"
 #import "DXDALRequest.h"
 
+#define VideoUploadingProgressNotificationName @"VideoUploadingProgressNotificationName"
+#define VideoNotificationURL @"VideoNotificationURL"
+#define VideoNotificationProgress @"VideoNotificationProgress"
+
 @interface DXDALDataProviderMultipartForm : DXDALDataProviderHTTP
 
 
