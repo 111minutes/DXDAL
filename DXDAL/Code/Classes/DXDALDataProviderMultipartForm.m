@@ -44,34 +44,27 @@
     NSLog(@"start request: %@", [urlRequest URL]);
     
     AFHTTPRequestOperation *operation = [self operationFromURLRequest:urlRequest request:httpRequest];
-    
+
     __block NSString *videoURL = httpRequest.fileURLstring;
     __block NSInteger prevNotificationBytesCount = 0;
+    
     [operation setUploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
-        
-        BOOL isNeedSendNotification = NO;
-        
-        NSMutableDictionary *params = nil;
         
         int part = totalBytesExpectedToWrite / 20;
         
-        if (totalBytesWritten == totalBytesExpectedToWrite || totalBytesWritten - prevNotificationBytesCount > part) {
-            //            NSLog(@"File size kb = %d", totalBytesExpectedToWrite/1024);
-            prevNotificationBytesCount = totalBytesWritten;
-            isNeedSendNotification = YES;
+        if(totalBytesWritten !=prevNotificationBytesCount) {
+            if (totalBytesWritten == totalBytesExpectedToWrite || totalBytesWritten - prevNotificationBytesCount > part) {
+                
+                prevNotificationBytesCount = totalBytesWritten;
+                
+                NSMutableDictionary *params = [NSMutableDictionary new];
+                [params setValue:videoURL forKey:VideoNotificationURL];
+                float value = totalBytesWritten;
+                [params setValue:[NSNumber numberWithFloat:value/totalBytesExpectedToWrite] forKey:VideoNotificationProgress];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:VideoUploadingProgressNotificationName object:nil userInfo:params];
+            }
         }
-        
-        if (isNeedSendNotification) {
-            params = [NSMutableDictionary new];
-            [params setValue:videoURL forKey:VideoNotificationURL];
-            float value = totalBytesWritten;
-            [params setValue:[NSNumber numberWithFloat:value/totalBytesExpectedToWrite] forKey:VideoNotificationProgress];
-            
-            prevNotificationBytesCount = totalBytesWritten;
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:VideoUploadingProgressNotificationName object:nil userInfo:params];
-        }
-        
     }];
     
     [self.httpClient enqueueHTTPRequestOperation:operation];
