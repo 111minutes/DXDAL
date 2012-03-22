@@ -11,7 +11,7 @@
 @implementation DXDALRequestMultipartForm
 
 @synthesize mimeType;
-@synthesize fileName;
+@synthesize name;
 @synthesize fileURLstring;
 
 @end

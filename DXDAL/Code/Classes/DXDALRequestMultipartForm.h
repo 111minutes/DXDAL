@@ -12,7 +12,7 @@
 @interface DXDALRequestMultipartForm : DXDALRequestHTTP
 
 @property (nonatomic, strong) NSString *mimeType;
-@property (nonatomic, strong) NSString *fileName;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *fileURLstring;
 
 @end
