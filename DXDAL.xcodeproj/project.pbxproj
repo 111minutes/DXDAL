@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0282FB29151F4DAB006EBF75 /* DXDALRequestFactoryHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 0282FB27151F4DA9006EBF75 /* DXDALRequestFactoryHTTP.h */; };
-		0282FB2A151F4DAB006EBF75 /* DXDALRequestFactoryHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 0282FB28151F4DAA006EBF75 /* DXDALRequestFactoryHTTP.m */; };
-		0282FB2E151F5C4C006EBF75 /* DXDALHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 0282FB2C151F5C4B006EBF75 /* DXDALHTTPClient.h */; };
-		0282FB2F151F5C4C006EBF75 /* DXDALHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0282FB2D151F5C4B006EBF75 /* DXDALHTTPClient.m */; };
+		0282FB41151F65D0006EBF75 /* DXDALDataProviderHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 0282FB35151F65D0006EBF75 /* DXDALDataProviderHTTP.h */; };
+		0282FB42151F65D0006EBF75 /* DXDALDataProviderHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 0282FB36151F65D0006EBF75 /* DXDALDataProviderHTTP.m */; };
+		0282FB43151F65D0006EBF75 /* DXDALHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 0282FB37151F65D0006EBF75 /* DXDALHTTPClient.h */; };
+		0282FB44151F65D0006EBF75 /* DXDALHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0282FB38151F65D0006EBF75 /* DXDALHTTPClient.m */; };
+		0282FB45151F65D0006EBF75 /* DXDALMapperStandart.h in Headers */ = {isa = PBXBuildFile; fileRef = 0282FB39151F65D0006EBF75 /* DXDALMapperStandart.h */; };
+		0282FB46151F65D0006EBF75 /* DXDALMapperStandart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0282FB3A151F65D0006EBF75 /* DXDALMapperStandart.m */; };
+		0282FB47151F65D0006EBF75 /* DXDALParserJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0282FB3B151F65D0006EBF75 /* DXDALParserJSON.h */; };
+		0282FB48151F65D0006EBF75 /* DXDALParserJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0282FB3C151F65D0006EBF75 /* DXDALParserJSON.m */; };
+		0282FB49151F65D0006EBF75 /* DXDALRequestFactoryHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 0282FB3D151F65D0006EBF75 /* DXDALRequestFactoryHTTP.h */; };
+		0282FB4A151F65D0006EBF75 /* DXDALRequestFactoryHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 0282FB3E151F65D0006EBF75 /* DXDALRequestFactoryHTTP.m */; };
+		0282FB4B151F65D0006EBF75 /* DXDALRequestHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 0282FB3F151F65D0006EBF75 /* DXDALRequestHTTP.h */; };
+		0282FB4C151F65D0006EBF75 /* DXDALRequestHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 0282FB40151F65D0006EBF75 /* DXDALRequestHTTP.m */; };
 		07576CF31519DF4200C697B0 /* DXDALRequestMultipartForm.h in Headers */ = {isa = PBXBuildFile; fileRef = 07576CF11519DF4200C697B0 /* DXDALRequestMultipartForm.h */; };
 		07576CF41519DF4200C697B0 /* DXDALRequestMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 07576CF21519DF4200C697B0 /* DXDALRequestMultipartForm.m */; };
 		07576CF71519E03F00C697B0 /* DXDALDataProviderMultipartForm.h in Headers */ = {isa = PBXBuildFile; fileRef = 07576CF51519E03E00C697B0 /* DXDALDataProviderMultipartForm.h */; };
 		07576CF81519E03F00C697B0 /* DXDALDataProviderMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 07576CF61519E03E00C697B0 /* DXDALDataProviderMultipartForm.m */; };
 		AD9982A0150A1358005D8D1F /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = AD99829F150A1358005D8D1F /* UserSession.m */; };
 		AD9982A3150A1B41005D8D1F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9982A2150A1B41005D8D1F /* User.m */; };
-		AD9982A6150A27BA005D8D1F /* DXDALResponseParserJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9982A4150A27B9005D8D1F /* DXDALResponseParserJSON.h */; };
-		AD9982A7150A27BA005D8D1F /* DXDALResponseParserJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9982A5150A27BA005D8D1F /* DXDALResponseParserJSON.m */; };
 		AD9CC4C81500249100FEBE10 /* DXDALRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4BC1500249100FEBE10 /* DXDALRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD9CC4C91500249100FEBE10 /* DXDALRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9CC4BD1500249100FEBE10 /* DXDALRequest.m */; };
 		AD9CC4CD1500249100FEBE10 /* DXDALConfigurableRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C21500249100FEBE10 /* DXDALConfigurableRequest.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -46,11 +52,6 @@
 		F7DD19BE85CF4147A5626578 /* DXDALRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626577 /* DXDALRequestFactory.m */; };
 		F7DD19BE85CF4147A562657A /* DXDALRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626579 /* DXDALRequestFactory.h */; };
 		F7DD19BE85CF4147A562657C /* UsersAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A562657B /* UsersAPI.m */; };
-		F7DD19BE85CF4147A5626580 /* DXDALRequestHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A562657F /* DXDALRequestHTTP.m */; };
-		F7DD19BE85CF4147A5626582 /* DXDALRequestHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626581 /* DXDALRequestHTTP.h */; };
-		F7DD19BE85CF4147A5626584 /* DXDALDataProviderHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626583 /* DXDALDataProviderHTTP.m */; };
-		F7DD19BE85CF4147A5626586 /* DXDALDataProviderHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626585 /* DXDALDataProviderHTTP.h */; };
-		F7DD19BE85CF4147A5626588 /* DXDALResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD19BE85CF4147A5626587 /* DXDALResponseParser.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,10 +65,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0282FB27151F4DA9006EBF75 /* DXDALRequestFactoryHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestFactoryHTTP.h; sourceTree = "<group>"; };
-		0282FB28151F4DAA006EBF75 /* DXDALRequestFactoryHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestFactoryHTTP.m; sourceTree = "<group>"; };
-		0282FB2C151F5C4B006EBF75 /* DXDALHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALHTTPClient.h; sourceTree = "<group>"; };
-		0282FB2D151F5C4B006EBF75 /* DXDALHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALHTTPClient.m; sourceTree = "<group>"; };
+		0282FB35151F65D0006EBF75 /* DXDALDataProviderHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALDataProviderHTTP.h; sourceTree = "<group>"; };
+		0282FB36151F65D0006EBF75 /* DXDALDataProviderHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALDataProviderHTTP.m; sourceTree = "<group>"; };
+		0282FB37151F65D0006EBF75 /* DXDALHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALHTTPClient.h; sourceTree = "<group>"; };
+		0282FB38151F65D0006EBF75 /* DXDALHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALHTTPClient.m; sourceTree = "<group>"; };
+		0282FB39151F65D0006EBF75 /* DXDALMapperStandart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALMapperStandart.h; sourceTree = "<group>"; };
+		0282FB3A151F65D0006EBF75 /* DXDALMapperStandart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALMapperStandart.m; sourceTree = "<group>"; };
+		0282FB3B151F65D0006EBF75 /* DXDALParserJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALParserJSON.h; sourceTree = "<group>"; };
+		0282FB3C151F65D0006EBF75 /* DXDALParserJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALParserJSON.m; sourceTree = "<group>"; };
+		0282FB3D151F65D0006EBF75 /* DXDALRequestFactoryHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestFactoryHTTP.h; sourceTree = "<group>"; };
+		0282FB3E151F65D0006EBF75 /* DXDALRequestFactoryHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestFactoryHTTP.m; sourceTree = "<group>"; };
+		0282FB3F151F65D0006EBF75 /* DXDALRequestHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestHTTP.h; sourceTree = "<group>"; };
+		0282FB40151F65D0006EBF75 /* DXDALRequestHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestHTTP.m; sourceTree = "<group>"; };
 		07576CF11519DF4200C697B0 /* DXDALRequestMultipartForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestMultipartForm.h; sourceTree = "<group>"; };
 		07576CF21519DF4200C697B0 /* DXDALRequestMultipartForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestMultipartForm.m; sourceTree = "<group>"; };
 		07576CF51519E03E00C697B0 /* DXDALDataProviderMultipartForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALDataProviderMultipartForm.h; sourceTree = "<group>"; };
@@ -77,8 +86,6 @@
 		AD99829F150A1358005D8D1F /* UserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSession.m; sourceTree = "<group>"; };
 		AD9982A1150A1B41005D8D1F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		AD9982A2150A1B41005D8D1F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		AD9982A4150A27B9005D8D1F /* DXDALResponseParserJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALResponseParserJSON.h; sourceTree = "<group>"; };
-		AD9982A5150A27BA005D8D1F /* DXDALResponseParserJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALResponseParserJSON.m; sourceTree = "<group>"; };
 		AD9CC4BC1500249100FEBE10 /* DXDALRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequest.h; sourceTree = "<group>"; };
 		AD9CC4BD1500249100FEBE10 /* DXDALRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequest.m; sourceTree = "<group>"; };
 		AD9CC4C01500249100FEBE10 /* DXDAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDAL.h; sourceTree = "<group>"; };
@@ -108,11 +115,6 @@
 		F7DD19BE85CF4147A5626579 /* DXDALRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestFactory.h; sourceTree = "<group>"; };
 		F7DD19BE85CF4147A562657B /* UsersAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersAPI.m; sourceTree = "<group>"; };
 		F7DD19BE85CF4147A562657D /* UsersAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersAPI.h; sourceTree = "<group>"; };
-		F7DD19BE85CF4147A562657F /* DXDALRequestHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestHTTP.m; sourceTree = "<group>"; };
-		F7DD19BE85CF4147A5626581 /* DXDALRequestHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestHTTP.h; sourceTree = "<group>"; };
-		F7DD19BE85CF4147A5626583 /* DXDALDataProviderHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALDataProviderHTTP.m; sourceTree = "<group>"; };
-		F7DD19BE85CF4147A5626585 /* DXDALDataProviderHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALDataProviderHTTP.h; sourceTree = "<group>"; };
-		F7DD19BE85CF4147A5626587 /* DXDALResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALResponseParser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0282FB34151F65CF006EBF75 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				0282FB35151F65D0006EBF75 /* DXDALDataProviderHTTP.h */,
+				0282FB36151F65D0006EBF75 /* DXDALDataProviderHTTP.m */,
+				0282FB37151F65D0006EBF75 /* DXDALHTTPClient.h */,
+				0282FB38151F65D0006EBF75 /* DXDALHTTPClient.m */,
+				0282FB39151F65D0006EBF75 /* DXDALMapperStandart.h */,
+				0282FB3A151F65D0006EBF75 /* DXDALMapperStandart.m */,
+				0282FB3B151F65D0006EBF75 /* DXDALParserJSON.h */,
+				0282FB3C151F65D0006EBF75 /* DXDALParserJSON.m */,
+				0282FB3D151F65D0006EBF75 /* DXDALRequestFactoryHTTP.h */,
+				0282FB3E151F65D0006EBF75 /* DXDALRequestFactoryHTTP.m */,
+				0282FB3F151F65D0006EBF75 /* DXDALRequestHTTP.h */,
+				0282FB40151F65D0006EBF75 /* DXDALRequestHTTP.m */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
 		07576CEF1519DEC800C697B0 /* Multipart */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,9 +201,7 @@
 				F7DD19BE85CF4147A5626577 /* DXDALRequestFactory.m */,
 				AD9CC4BC1500249100FEBE10 /* DXDALRequest.h */,
 				AD9CC4BD1500249100FEBE10 /* DXDALRequest.m */,
-				0282FB27151F4DA9006EBF75 /* DXDALRequestFactoryHTTP.h */,
-				0282FB28151F4DAA006EBF75 /* DXDALRequestFactoryHTTP.m */,
-				F7DD19BE85CF4147A562657E /* HTTP */,
+				0282FB34151F65CF006EBF75 /* HTTP */,
 				07576CEF1519DEC800C697B0 /* Multipart */,
 			);
 			path = Classes;
@@ -288,22 +307,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F7DD19BE85CF4147A562657E /* HTTP */ = {
-			isa = PBXGroup;
-			children = (
-				F7DD19BE85CF4147A5626587 /* DXDALResponseParser.h */,
-				F7DD19BE85CF4147A5626585 /* DXDALDataProviderHTTP.h */,
-				F7DD19BE85CF4147A5626583 /* DXDALDataProviderHTTP.m */,
-				F7DD19BE85CF4147A5626581 /* DXDALRequestHTTP.h */,
-				F7DD19BE85CF4147A562657F /* DXDALRequestHTTP.m */,
-				AD9982A4150A27B9005D8D1F /* DXDALResponseParserJSON.h */,
-				AD9982A5150A27BA005D8D1F /* DXDALResponseParserJSON.m */,
-				0282FB2C151F5C4B006EBF75 /* DXDALHTTPClient.h */,
-				0282FB2D151F5C4B006EBF75 /* DXDALHTTPClient.m */,
-			);
-			path = HTTP;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -319,14 +322,14 @@
 				AD9CC4CD1500249100FEBE10 /* DXDALConfigurableRequest.h in Headers */,
 				AD9CC4D4150026D500FEBE10 /* DXDAL.h in Headers */,
 				F7DD19BE85CF4147A562657A /* DXDALRequestFactory.h in Headers */,
-				F7DD19BE85CF4147A5626582 /* DXDALRequestHTTP.h in Headers */,
-				F7DD19BE85CF4147A5626586 /* DXDALDataProviderHTTP.h in Headers */,
-				AD9982A6150A27BA005D8D1F /* DXDALResponseParserJSON.h in Headers */,
-				F7DD19BE85CF4147A5626588 /* DXDALResponseParser.h in Headers */,
 				07576CF31519DF4200C697B0 /* DXDALRequestMultipartForm.h in Headers */,
 				07576CF71519E03F00C697B0 /* DXDALDataProviderMultipartForm.h in Headers */,
-				0282FB29151F4DAB006EBF75 /* DXDALRequestFactoryHTTP.h in Headers */,
-				0282FB2E151F5C4C006EBF75 /* DXDALHTTPClient.h in Headers */,
+				0282FB41151F65D0006EBF75 /* DXDALDataProviderHTTP.h in Headers */,
+				0282FB43151F65D0006EBF75 /* DXDALHTTPClient.h in Headers */,
+				0282FB45151F65D0006EBF75 /* DXDALMapperStandart.h in Headers */,
+				0282FB47151F65D0006EBF75 /* DXDALParserJSON.h in Headers */,
+				0282FB49151F65D0006EBF75 /* DXDALRequestFactoryHTTP.h in Headers */,
+				0282FB4B151F65D0006EBF75 /* DXDALRequestHTTP.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,13 +487,14 @@
 			files = (
 				AD9CC4C91500249100FEBE10 /* DXDALRequest.m in Sources */,
 				F7DD19BE85CF4147A5626578 /* DXDALRequestFactory.m in Sources */,
-				F7DD19BE85CF4147A5626580 /* DXDALRequestHTTP.m in Sources */,
-				F7DD19BE85CF4147A5626584 /* DXDALDataProviderHTTP.m in Sources */,
-				AD9982A7150A27BA005D8D1F /* DXDALResponseParserJSON.m in Sources */,
 				07576CF41519DF4200C697B0 /* DXDALRequestMultipartForm.m in Sources */,
 				07576CF81519E03F00C697B0 /* DXDALDataProviderMultipartForm.m in Sources */,
-				0282FB2A151F4DAB006EBF75 /* DXDALRequestFactoryHTTP.m in Sources */,
-				0282FB2F151F5C4C006EBF75 /* DXDALHTTPClient.m in Sources */,
+				0282FB42151F65D0006EBF75 /* DXDALDataProviderHTTP.m in Sources */,
+				0282FB44151F65D0006EBF75 /* DXDALHTTPClient.m in Sources */,
+				0282FB46151F65D0006EBF75 /* DXDALMapperStandart.m in Sources */,
+				0282FB48151F65D0006EBF75 /* DXDALParserJSON.m in Sources */,
+				0282FB4A151F65D0006EBF75 /* DXDALRequestFactoryHTTP.m in Sources */,
+				0282FB4C151F65D0006EBF75 /* DXDALRequestHTTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

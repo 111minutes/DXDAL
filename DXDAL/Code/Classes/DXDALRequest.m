@@ -37,12 +37,21 @@
     return self;
 }
 
-- (void)addParam:(NSString *)param withName:(NSString *)key {
+- (void)addParamString:(NSString *)param withName:(NSString *)key {
     assert(key != nil);
     assert(param != nil);
     
     [_params setObject:param forKey:key];
 }
+
+- (void)addParamNumber:(NSNumber*)param withName:(NSString *)key
+{
+    assert(key != nil);
+    assert(param != nil);
+
+    [_params setObject:param forKey:key];    
+}
+
 
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler {
     assert(handler != nil);

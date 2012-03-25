@@ -6,10 +6,11 @@
 
 
 #import "DXDALDataProviderHTTP.h"
-#import "DXDALRequestHTTP.h"
 #import "AFNetworking.h"
-#import "DXDALResponseParserJSON.h"   
 #import "JSONKit.h"
+#import "DXDALRequestHTTP.h"
+#import "DXDALParser.h"
+#import "DXDALMapper.h"
 
 
 @implementation DXDALDataProviderHTTP
@@ -49,10 +50,12 @@
     NSURLRequest *urlRequest = [self urlRequestFromRequest:httpRequest];
     NSLog(@"start request: %@", [urlRequest URL]);
     
-	AFHTTPRequestOperation *operation = [_httpClient HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id result = [httpRequest.parser parseJSON:operation.responseString withEntityClass:httpRequest.entityClass];
-        
+	AFHTTPRequestOperation *operation = [_httpClient HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        id parsedObject = [httpRequest.parser parseString:operation.responseString];
+        id result = [httpRequest.mapper mapFromInputData:parsedObject withClass:httpRequest.entityClass];
         [httpRequest didFinishWithResponse:result];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSMutableDictionary *userInfo = [[error userInfo] mutableCopy];

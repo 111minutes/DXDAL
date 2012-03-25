@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DXDALResponseParser.h"
+#import "DXDALParser.h"
 
 @class DXDALRequestHTTP;
 
-@interface DXDALResponseParserJSON : NSObject <DXDALResponseParser>
+@interface DXDALParserJSON : NSObject <DXDALParser>
 
 
 @end

@@ -5,15 +5,16 @@
 //
 
 #import "DXDALRequestHTTP.h"
-#import "DXDALResponseParser.h"
+
 
 @implementation DXDALRequestHTTP
 
 @synthesize httpMethod = _httpMethod;
 @synthesize httpPath = _httpPath;
 @synthesize defaultHTTPHeaders = _defaultHTTPHeaders;
-@synthesize entityClass, mapping;
+@synthesize entityClass;
 @synthesize parser;
+@synthesize mapper;
 
 - (NSString*)httpMethod {
     return [_httpMethod uppercaseString];

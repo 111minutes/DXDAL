@@ -34,7 +34,8 @@ typedef void (^DXDALRequestErrorHandler)(NSError *error);
 
 - (void)resume;
 
-- (void)addParam:(NSString *)param withName:(NSString *)key;
+- (void)addParamString:(NSString *)param withName:(NSString *)key;
+- (void)addParamNumber:(NSNumber*)param withName:(NSString *)key;
 
 - (void)didFinishWithResponse:(id)response;
 - (void)didFailWithResponse:(id)response;
