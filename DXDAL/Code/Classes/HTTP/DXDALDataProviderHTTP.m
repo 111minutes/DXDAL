@@ -11,23 +11,22 @@
 #import "DXDALResponseParserJSON.h"   
 #import "JSONKit.h"
 
+
 @implementation DXDALDataProviderHTTP
 @synthesize httpClient = _httpClient;
 
 - (id)initWithBaseURL:(NSURL*)aBaseURL {
     self = [super init];
     if (self) {
-        _httpClient = [[AFHTTPClient alloc] initWithBaseURL:aBaseURL];
+        _httpClient = [[DXDALHTTPClient alloc] initWithBaseURL:aBaseURL];
     }
     return self;
 }
 
-- (DXDALRequest *)prepareRequest {
-    return [[DXDALRequestHTTP alloc] initWithDataProvider:self];
-}
-
 - (void)enqueueRequest:(DXDALRequest *)aRequest {
     assert(aRequest != nil);
+    
+    [_httpClient clearDefaultHeaders];
 
     DXDALRequestHTTP *httpRequest = (DXDALRequestHTTP*)aRequest;
     if (httpRequest.defaultHTTPHeaders){
@@ -36,23 +35,19 @@
         }
     }
     
-    NSURLRequest *urlRequest = [self urlRequestFromRequest:httpRequest];
-    NSLog(@"start request: %@", [urlRequest URL]);
-    
-    AFHTTPRequestOperation *operation = [self operationFromURLRequest:urlRequest request:httpRequest];
-    
+    AFHTTPRequestOperation *operation = [self operationFromRequest:httpRequest];
     [_httpClient enqueueHTTPRequestOperation:operation];
 }
 
-- (NSURLRequest*)urlRequestFromRequest:(DXDALRequest*) request {
-    DXDALRequestHTTP *httpRequest = (DXDALRequestHTTP*) request;
-    NSURLRequest *urlRequest = [_httpClient requestWithMethod:httpRequest.httpMethod path:httpRequest.httpPath parameters:httpRequest.params];
-    return urlRequest;
+- (NSURLRequest*)urlRequestFromRequest:(DXDALRequestHTTP*) httpRequest
+{
+    return [_httpClient requestWithMethod:httpRequest.httpMethod path:httpRequest.httpPath parameters:httpRequest.params];
 }
 
-- (AFHTTPRequestOperation*)operationFromURLRequest:(NSURLRequest*) urlRequest request:(DXDALRequest*) request {
-
-    DXDALRequestHTTP *httpRequest = (DXDALRequestHTTP*)request;
+- (AFHTTPRequestOperation*) operationFromRequest:(DXDALRequestHTTP*) httpRequest
+{
+    NSURLRequest *urlRequest = [self urlRequestFromRequest:httpRequest];
+    NSLog(@"start request: %@", [urlRequest URL]);
     
 	AFHTTPRequestOperation *operation = [_httpClient HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id result = [httpRequest.parser parseJSON:operation.responseString withEntityClass:httpRequest.entityClass];
@@ -77,6 +72,5 @@
     }];
     return operation;
 }
-
 
 @end

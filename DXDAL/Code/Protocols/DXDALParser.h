@@ -9,6 +9,6 @@
 
 - (id)parseString:(NSString *)aString;
 
-- (id)parseData:(NSData *)aData;
+//- (id)parseData:(NSData *)aData;
 
 @end

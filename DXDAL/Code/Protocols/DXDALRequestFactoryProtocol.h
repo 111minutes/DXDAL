@@ -16,6 +16,7 @@ typedef void (^DXDALRequestConfigurationBlock)(id request);
 @property (nonatomic, readonly, strong) id<DXDALDataProvider> dataProvider;
 
 - (id <DXDALDataProvider>)getDataProvider;
+- (Class)getDefaultRequestClass;
 
 - (DXDALRequest*)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock;
 - (DXDALRequest*)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock requestClass:(Class)RequestClass;

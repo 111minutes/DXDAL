@@ -10,12 +10,6 @@
 
 @protocol DXDALDataProvider <NSObject>
 
-- (DXDALRequest*)prepareRequest;
-
 - (void)enqueueRequest:(DXDALRequest*)request;
-
-- (NSURLRequest*)urlRequestFromRequest:(DXDALRequest*) request;
-
-- (AFHTTPRequestOperation*)operationFromURLRequest:(NSURLRequest*) urlRequest request:(DXDALRequest*) request;
 
 @end

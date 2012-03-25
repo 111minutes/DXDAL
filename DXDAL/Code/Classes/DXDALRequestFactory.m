@@ -22,6 +22,13 @@
 @synthesize dataProvider;
 
 - (id <DXDALDataProvider>)getDataProvider {
+    NSAssert(NO, @"Override this method in subclasses!");
+    return nil;
+}
+
+- (Class)getDefaultRequestClass
+{
+    NSAssert(NO, @"Override this method in subclasses!");
     return nil;
 }
 
@@ -48,11 +55,9 @@
 
 	DXDALRequest *request = nil;
 
-	if(RequestClass) {
-		request = [[RequestClass alloc] initWithDataProvider:self.dataProvider];
-	} else {
-		request = [self.dataProvider prepareRequest];
-	}
+	if(!RequestClass)
+        RequestClass = [self getDefaultRequestClass];
+    request = [[RequestClass alloc] initWithDataProvider:self.dataProvider];
 
     assert(request != nil);
 

@@ -8,8 +8,6 @@
 
 #import "DXDALDataProviderMultipartForm.h"
 
-#import "AFHTTPClient.h"
-#import "DXDALRequestHTTP.h"
 #import "DXDALRequestMultipartForm.h"
 #import "DXDALResponseParserJSON.h"   
 #import "AFNetworking.h"
@@ -17,12 +15,12 @@
 
 @implementation DXDALDataProviderMultipartForm
 
-- (DXDALRequest *)prepareRequest {
-    return [[DXDALRequestMultipartForm alloc] initWithDataProvider:self];
-}
+//- (DXDALRequest *)prepareRequest {
+//    return [[DXDALRequestMultipartForm alloc] initWithDataProvider:self];
+//}
 
-- (NSURLRequest*)urlRequestFromRequest:(DXDALRequest*) request {
-    DXDALRequestMultipartForm *multipartFormRequest = (DXDALRequestMultipartForm*) request;
+- (NSURLRequest*)urlRequestFromRequest:(DXDALRequestHTTP*) httpRequest{
+    DXDALRequestMultipartForm *multipartFormRequest = (DXDALRequestMultipartForm*) httpRequest;
     NSURLRequest *urlRequest = [self.httpClient multipartFormRequestWithMethod:multipartFormRequest.httpMethod path:multipartFormRequest.httpPath parameters:multipartFormRequest.params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
         [formData appendPartWithFileURL:[NSURL URLWithString:multipartFormRequest.fileURLstring] name:multipartFormRequest.name error:nil];
@@ -30,21 +28,12 @@
     return urlRequest;
 }
 
-- (void)enqueueRequest:(DXDALRequest *)aRequest {
-    assert(aRequest != nil);
+- (AFHTTPRequestOperation*) operationFromRequest:(DXDALRequestHTTP *)aHttpRequest
+{
+    AFHTTPRequestOperation* operation = [super operationFromRequest:aHttpRequest];
     
-    DXDALRequestMultipartForm *httpRequest = (DXDALRequestMultipartForm*)aRequest;
-    if (httpRequest.defaultHTTPHeaders){
-        for (NSString *key in [httpRequest.defaultHTTPHeaders allKeys]){
-            [self.httpClient setDefaultHeader:key value:[httpRequest.defaultHTTPHeaders objectForKey:key]];
-        }
-    }
+    DXDALRequestMultipartForm* httpRequest = (DXDALRequestMultipartForm*)aHttpRequest;
     
-    NSURLRequest *urlRequest = [self urlRequestFromRequest:httpRequest];
-    NSLog(@"start request: %@", [urlRequest URL]);
-    
-    AFHTTPRequestOperation *operation = [self operationFromURLRequest:urlRequest request:httpRequest];
-
     __block NSString *videoURL = httpRequest.fileURLstring;
     __block NSInteger prevNotificationBytesCount = 0;
     
@@ -67,10 +56,8 @@
         }
     }];
     
-    [self.httpClient enqueueHTTPRequestOperation:operation];
+    return operation;
 }
-
-
 
 @end
 
