@@ -34,8 +34,8 @@ typedef void (^DXDALRequestErrorHandler)(NSError *error);
 
 - (void)resume;
 
-- (void)addParamString:(NSString *)param withName:(NSString *)key;
-- (void)addParamNumber:(NSNumber*)param withName:(NSString *)key;
+- (void)addParamString:(NSString *)param withName:(NSString *)key NS_DEPRECATED_IOS(4_0, 4_0);
+- (void)addParam:(NSObject*)param withName:(NSString *)key;
 
 - (void)didFinishWithResponse:(id)response;
 - (void)didFailWithResponse:(id)response;

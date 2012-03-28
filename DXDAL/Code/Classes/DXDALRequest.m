@@ -44,14 +44,25 @@
     [_params setObject:param forKey:key];
 }
 
-- (void)addParamNumber:(NSNumber*)param withName:(NSString *)key
+- (void)addParam:(NSObject*)param withName:(NSString *)key
 {
     assert(key != nil);
     assert(param != nil);
-
-    [_params setObject:param forKey:key];    
+    
+    if(
+       [param isKindOfClass:[NSString class]] ||
+       [param isKindOfClass:[NSNumber class]] ||
+       [param isKindOfClass:[NSArray class]] ||
+       [param isKindOfClass:[NSDictionary class]]
+       )
+    {
+        [_params setObject:param forKey:key];
+    }
+    else
+    {
+        NSAssert(NO, @"Wrong param type!");
+    }
 }
-
 
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler {
     assert(handler != nil);
