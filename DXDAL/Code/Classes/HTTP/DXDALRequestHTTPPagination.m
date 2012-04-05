@@ -48,4 +48,10 @@
     [super didFinishWithResponse:response];
 }
 
+- (void) setStartPageNumber:(NSUInteger)aStartPageNumber
+{
+    startPageNumber = aStartPageNumber;
+    currentPage = startPageNumber;
+}
+
 @end

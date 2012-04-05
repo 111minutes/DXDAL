@@ -5,6 +5,7 @@
 //
 
 #import "DXDALRequestHTTP.h"
+#import "DXDALMapperStandart.h"
 
 
 @implementation DXDALRequestHTTP
@@ -15,6 +16,16 @@
 @synthesize entityClass;
 @synthesize parser;
 @synthesize mapper;
+
+- (id) initWithDataProvider:(id<DXDALDataProvider>)dataProvider
+{
+    self = [super initWithDataProvider:dataProvider];
+    if (self)
+    {
+        self.mapper = [DXDALMapperStandart new];
+    }
+    return self;
+}
 
 - (NSString*)httpMethod {
     return [_httpMethod uppercaseString];
