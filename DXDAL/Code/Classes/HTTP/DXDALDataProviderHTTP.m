@@ -52,9 +52,7 @@
     
 	AFHTTPRequestOperation *operation = [_httpClient HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id responseObject)
     {
-        id parsedObject = [httpRequest.parser parseString:operation.responseString];
-        id result = [httpRequest.mapper mapFromInputData:parsedObject withClass:httpRequest.entityClass];
-        [httpRequest didFinishWithResponse:result];
+        [httpRequest didFinishWithResponseString:operation.responseString responseStatusCode:operation.response.statusCode];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         

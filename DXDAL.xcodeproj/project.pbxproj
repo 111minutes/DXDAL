@@ -48,6 +48,8 @@
 		ADDC38EB15002300007349BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38EA15002300007349BC /* UIKit.framework */; };
 		ADDC38EC15002300007349BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38DA15002300007349BC /* Foundation.framework */; };
 		ADDC38EF15002300007349BC /* libDXDAL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38D715002300007349BC /* libDXDAL.a */; };
+		E6BA393115385FB7008AB8F4 /* DXDALRequestHTTPRawData.h in Headers */ = {isa = PBXBuildFile; fileRef = E6BA392F15385FB6008AB8F4 /* DXDALRequestHTTPRawData.h */; };
+		E6BA393215385FB7008AB8F4 /* DXDALRequestHTTPRawData.m in Sources */ = {isa = PBXBuildFile; fileRef = E6BA393015385FB6008AB8F4 /* DXDALRequestHTTPRawData.m */; };
 		E6F7F2FA152DBFA500301733 /* DXDALRequestHTTPPagination.h in Headers */ = {isa = PBXBuildFile; fileRef = E6F7F2F8152DBFA000301733 /* DXDALRequestHTTPPagination.h */; };
 		E6F7F2FB152DBFA500301733 /* DXDALRequestHTTPPagination.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F7F2F9152DBFA200301733 /* DXDALRequestHTTPPagination.m */; };
 		F7DD19BE85CF4147A5626576 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB311C521B0F439C8B445314 /* libPods.a */; };
@@ -113,6 +115,8 @@
 		ADDC38E815002300007349BC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		ADDC38EA15002300007349BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BB311C521B0F439C8B445314 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6BA392F15385FB6008AB8F4 /* DXDALRequestHTTPRawData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestHTTPRawData.h; sourceTree = "<group>"; };
+		E6BA393015385FB6008AB8F4 /* DXDALRequestHTTPRawData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestHTTPRawData.m; sourceTree = "<group>"; };
 		E6F7F2F8152DBFA000301733 /* DXDALRequestHTTPPagination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALRequestHTTPPagination.h; sourceTree = "<group>"; };
 		E6F7F2F9152DBFA200301733 /* DXDALRequestHTTPPagination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestHTTPPagination.m; sourceTree = "<group>"; };
 		F7DD19BE85CF4147A5626577 /* DXDALRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALRequestFactory.m; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				0282FB3E151F65D0006EBF75 /* DXDALRequestFactoryHTTP.m */,
 				0282FB3F151F65D0006EBF75 /* DXDALRequestHTTP.h */,
 				0282FB40151F65D0006EBF75 /* DXDALRequestHTTP.m */,
+				E6BA392F15385FB6008AB8F4 /* DXDALRequestHTTPRawData.h */,
+				E6BA393015385FB6008AB8F4 /* DXDALRequestHTTPRawData.m */,
 				E6F7F2F8152DBFA000301733 /* DXDALRequestHTTPPagination.h */,
 				E6F7F2F9152DBFA200301733 /* DXDALRequestHTTPPagination.m */,
 			);
@@ -337,6 +343,7 @@
 				0282FB49151F65D0006EBF75 /* DXDALRequestFactoryHTTP.h in Headers */,
 				0282FB4B151F65D0006EBF75 /* DXDALRequestHTTP.h in Headers */,
 				E6F7F2FA152DBFA500301733 /* DXDALRequestHTTPPagination.h in Headers */,
+				E6BA393115385FB7008AB8F4 /* DXDALRequestHTTPRawData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +510,7 @@
 				0282FB4A151F65D0006EBF75 /* DXDALRequestFactoryHTTP.m in Sources */,
 				0282FB4C151F65D0006EBF75 /* DXDALRequestHTTP.m in Sources */,
 				E6F7F2FB152DBFA500301733 /* DXDALRequestHTTPPagination.m in Sources */,
+				E6BA393215385FB7008AB8F4 /* DXDALRequestHTTPRawData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
