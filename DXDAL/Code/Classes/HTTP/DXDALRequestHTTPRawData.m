@@ -12,11 +12,7 @@
 
 - (void) didFinishWithResponseString:(NSString *)responseString responseStatusCode:(NSInteger)responseStatusCode {
     NSNumber *statusCode = [NSNumber numberWithInteger:responseStatusCode];
-    if (responseStatusCode == 200) {
-        [self didFinishWithResponse:statusCode];
-    } else {
-        [self didFailWithResponse:statusCode];
-    }
+    [self didFinishWithResponse:statusCode];
 }
 
 @end
