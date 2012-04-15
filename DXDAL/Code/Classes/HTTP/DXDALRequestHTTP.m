@@ -6,7 +6,7 @@
 
 #import "DXDALRequestHTTP.h"
 #import "DXDALMapperStandart.h"
-
+#import "DXDALParserJSON.h"
 
 @implementation DXDALRequestHTTP
 
