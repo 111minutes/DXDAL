@@ -18,8 +18,9 @@
 @implementation DXDALRequest {
     NSMutableArray *_successHandlers;
     NSMutableArray *_errorHandlers;
+    NSMutableArray *_progressHandlers;
+    
     __unsafe_unretained id<DXDALDataProvider> _dataProvider;
-
 }
 
 @synthesize params = _params;
@@ -74,6 +75,11 @@
     [_errorHandlers addObject:[handler copy]];
 }
 
+- (void)addProgressHandler:(DXDALProgressHandler)handler {
+    assert(handler != nil);
+    [_progressHandlers addObject:[handler copy]];
+}
+
 - (void)start {
     [_dataProvider enqueueRequest:self];
 }
@@ -108,5 +114,11 @@
     }
 }
 
+- (void)didChangeProgressValue:(float)progressValue {
+    for (id block in _progressHandlers) {
+        DXDALProgressHandler handler = block;
+        handler(progressValue);
+    }
+}
 
 @end
