@@ -16,6 +16,8 @@ typedef void (^DXDALRequestSuccesHandler)(id response);
 
 typedef void (^DXDALRequestErrorHandler)(NSError *error);
 
+typedef void (^DXDALProgressHandler)(float currentProgress);
+
 @interface DXDALRequest : NSObject 
 
 @property (nonatomic, strong, readonly) NSMutableDictionary *params;
@@ -25,6 +27,8 @@ typedef void (^DXDALRequestErrorHandler)(NSError *error);
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler;
 
 - (void)addErrorHandler:(DXDALRequestErrorHandler)handler;
+
+- (void)addProgressHandler:(DXDALProgressHandler)handler;
 
 - (void)start;
 
@@ -39,6 +43,6 @@ typedef void (^DXDALRequestErrorHandler)(NSError *error);
 
 - (void)didFinishWithResponse:(id)response;
 - (void)didFailWithResponse:(id)response;
-
+- (void)didChangeProgressValue:(float)progressValue;
 
 @end

@@ -73,6 +73,15 @@
         
         [httpRequest didFailWithResponse:innerError];
     }];
+    
+    
+    void (^progressBlock)(NSInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead);
+    progressBlock = ^(NSInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead) {
+        float progress = totalBytesExpectedToRead / totalBytesRead;
+        [httpRequest didChangeProgressValue:progress];
+    };
+    [operation setDownloadProgressBlock:progressBlock];
+    
     return operation;
 }
 
