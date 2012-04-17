@@ -33,6 +33,7 @@
         _dataProvider = dataProvider;
         _successHandlers = [NSMutableArray new];
         _errorHandlers = [NSMutableArray new];
+        _progressHandlers = [NSMutableArray new];
         _params = [NSMutableDictionary new];
     }
     return self;
