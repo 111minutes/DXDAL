@@ -98,16 +98,22 @@
 }
 
 - (void)didFinishWithResponse:(id)response {
-    assert(response != nil);
+    //assert(response != nil);
     
-    for (id block in _successHandlers) {
-        DXDALRequestSuccesHandler handler = block;
-        handler(response);
+    if (response ) {
+        for (id block in _successHandlers) {
+            DXDALRequestSuccesHandler handler = block;
+            handler(response);
+        }
+
+    } else {
+        [self didFailWithResponse:response];
     }
+    
 }
 
 - (void)didFailWithResponse:(id)response {
-    assert(response != nil);
+    //assert(response != nil);
     
     for (id block in _errorHandlers) {
         DXDALRequestErrorHandler handler = block;
