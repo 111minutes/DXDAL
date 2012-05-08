@@ -98,7 +98,6 @@
 }
 
 - (void)didFinishWithResponse:(id)response {
-    //assert(response != nil);
     
     if (response ) {
         for (id block in _successHandlers) {
@@ -113,7 +112,6 @@
 }
 
 - (void)didFailWithResponse:(id)response {
-    //assert(response != nil);
     
     for (id block in _errorHandlers) {
         DXDALRequestErrorHandler handler = block;
