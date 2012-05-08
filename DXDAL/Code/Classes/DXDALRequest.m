@@ -99,7 +99,7 @@
 
 - (void)didFinishWithResponse:(id)response {
     
-    if (response ) {
+    if (response) {
         for (id block in _successHandlers) {
             DXDALRequestSuccesHandler handler = block;
             handler(response);
