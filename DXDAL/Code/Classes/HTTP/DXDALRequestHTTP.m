@@ -36,14 +36,13 @@
                   responseStatusCode:(NSInteger)responseStatusCode {
 
     id parsedObject;
-    if ([responseObject isKindOfClass:[NSData class]]) {
-        parsedObject = responseObject;
-    } else {
-       parsedObject = [self.parser parseString:responseString];
-    }
-     
-    id result = [self.mapper mapFromInputData:parsedObject withClass:self.entityClass];
-    [self didFinishWithResponse:result];
+    if (responseString != nil) {
+        parsedObject = [self.parser parseString:responseString];
+        id result = [self.mapper mapFromInputData:parsedObject withClass:self.entityClass];
+        [self didFinishWithResponse:result];
+    } else if ([responseObject isKindOfClass:[NSData class]]) {
+        [self didFinishWithResponse:responseObject];
+    } 
 }
 
 @end
