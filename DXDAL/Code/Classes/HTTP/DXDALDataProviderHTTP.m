@@ -52,7 +52,9 @@
     
 	AFHTTPRequestOperation *operation = [_httpClient HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id responseObject)
     {
-        [httpRequest didFinishWithResponseString:operation.responseString responseStatusCode:operation.response.statusCode];
+        [httpRequest didFinishWithResponseString:operation.responseString 
+                                  responseObject:responseObject 
+                              responseStatusCode:operation.response.statusCode];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         

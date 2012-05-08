@@ -23,6 +23,8 @@
 @property (nonatomic, strong) id<DXDALParser> parser;
 @property (nonatomic, strong) id<DXDALMapper> mapper;
 
-- (void) didFinishWithResponseString:(NSString *)responseString responseStatusCode:(NSInteger)responseStatusCode;
+- (void) didFinishWithResponseString:(NSString *)responseString 
+                      responseObject:(id)responseObject 
+                  responseStatusCode:(NSInteger)responseStatusCode;
 
 @end

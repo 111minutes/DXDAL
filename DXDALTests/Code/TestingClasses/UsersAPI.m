@@ -27,7 +27,7 @@
         
         request.entityClass = [UserSession class];
         
-        request.mapping = [NSDictionary dictionaryWithObject:@"token" forKey:@"token"];
+        //request.mapping = [NSDictionary dictionaryWithObject:@"token" forKey:@"token"];
         
         [request addParam:login withName:@"email"];
         [request addParam:password withName:@"password"];
@@ -50,7 +50,7 @@
         [mapping setObject:@"password_confirmation" forKey:@"passwordConfirmation"];
         [mapping setObject:@"age" forKey:@"age"];
         
-        request.mapping = mapping;
+        //request.mapping = mapping;
         
         [request addParam:user.name withName:@"user[name]"];
         [request addParam:user.email withName:@"user[email"];
