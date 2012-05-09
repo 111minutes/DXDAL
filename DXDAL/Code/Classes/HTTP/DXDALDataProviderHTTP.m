@@ -78,7 +78,8 @@
     void (^progressBlock)(NSInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead);
     progressBlock = ^(NSInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead) {
         float progress =  (float)totalBytesRead / (float)totalBytesExpectedToRead;
-        [httpRequest didChangeProgressValue:progress];
+        float delta = (float)bytesRead / (float)totalBytesExpectedToRead;
+        [httpRequest didChangeProgressValue:progress progressDelta:delta];
     };
     [operation setDownloadProgressBlock:progressBlock];
     

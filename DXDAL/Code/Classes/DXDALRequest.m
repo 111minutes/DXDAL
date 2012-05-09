@@ -119,10 +119,10 @@
     }
 }
 
-- (void)didChangeProgressValue:(float)progressValue {
+- (void)didChangeProgressValue:(float)progressValue progressDelta:(float)progressDelta {
     for (id block in _progressHandlers) {
         DXDALProgressHandler handler = block;
-        handler(progressValue);
+        handler(progressValue, progressDelta);
     }
 }
 
