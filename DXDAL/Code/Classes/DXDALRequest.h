@@ -16,7 +16,7 @@ typedef void (^DXDALRequestSuccesHandler)(id response);
 
 typedef void (^DXDALRequestErrorHandler)(NSError *error);
 
-typedef void (^DXDALProgressHandler)(float currentProgress);
+typedef void (^DXDALProgressHandler)(float currentProgress, float progressDelta);
 
 @interface DXDALRequest : NSObject 
 
@@ -43,6 +43,6 @@ typedef void (^DXDALProgressHandler)(float currentProgress);
 
 - (void)didFinishWithResponse:(id)response;
 - (void)didFailWithResponse:(id)response;
-- (void)didChangeProgressValue:(float)progressValue;
+- (void)didChangeProgressValue:(float)progressValue progressDelta:(float)progressDelta;
 
 @end
