@@ -35,7 +35,7 @@ use
 
 ``` objective-c
 MyRequestFactory *factory = [MyRequestFactory sharedInstance];
-```        
+       
 [factory addDefaultConfig:^(id request) {
             [request addParam:user.userID withName:@"user_id"];
 }];
