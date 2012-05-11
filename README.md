@@ -1,7 +1,7 @@
 
 ## Using DXDAL
 
-At first you should request factory
+At first you should create request factory
 
 ``` objective-c
 @interface MyRequestFactory : DXDALRequestFactory
