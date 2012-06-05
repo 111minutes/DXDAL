@@ -26,7 +26,7 @@ typedef void (^DXDALProgressHandler)(float currentProgress, float progressDelta)
 
 - (id)initWithDataProvider:(id<DXDALDataProvider>)dataProvider;
 
-- (void)addRequestDidStartHandler:(DXDALRequestDidStartHandler)nandler;
+- (void)addRequestDidStartHandler:(DXDALRequestDidStartHandler)handler;
 
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler;
 
