@@ -10,7 +10,9 @@
 @protocol DXDALConfigurableRequest;
 @protocol DXDALDataProvider;
 
-@class DXDALRequestResponse;
+@class DXDALRequestResponse, DXDALRequest;
+
+typedef void (^DXDALRequestDidStartHandler)(DXDALRequest *request);
 
 typedef void (^DXDALRequestSuccesHandler)(id response);
 
@@ -23,6 +25,8 @@ typedef void (^DXDALProgressHandler)(float currentProgress, float progressDelta)
 @property (nonatomic, strong, readonly) NSMutableDictionary *params;
 
 - (id)initWithDataProvider:(id<DXDALDataProvider>)dataProvider;
+
+- (void)addRequestDidStartHandler:(DXDALRequestDidStartHandler)handler;
 
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler;
 

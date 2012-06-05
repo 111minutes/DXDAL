@@ -16,6 +16,7 @@
 @end
 
 @implementation DXDALRequest {
+    NSMutableArray *_requestDidStartHandlers;
     NSMutableArray *_successHandlers;
     NSMutableArray *_errorHandlers;
     NSMutableArray *_progressHandlers;
@@ -31,6 +32,7 @@
     self = [super init];
     if (self) {
         _dataProvider = dataProvider;
+        _requestDidStartHandlers = [NSMutableArray new];
         _successHandlers = [NSMutableArray new];
         _errorHandlers = [NSMutableArray new];
         _progressHandlers = [NSMutableArray new];
@@ -66,6 +68,11 @@
     }
 }
 
+- (void)addRequestDidStartHandler:(DXDALRequestDidStartHandler)handler {
+    assert(handler != nil);
+    [_requestDidStartHandlers addObject:handler];
+}
+
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler {
     assert(handler != nil);
     [_successHandlers addObject:[handler copy]];
@@ -83,6 +90,11 @@
 
 - (void)start {
     [_dataProvider enqueueRequest:self];
+    for (DXDALRequestDidStartHandler handler in _requestDidStartHandlers) {
+        if (handler) {
+            handler(self);
+        }
+    }
 }
 
 - (void)stop {
