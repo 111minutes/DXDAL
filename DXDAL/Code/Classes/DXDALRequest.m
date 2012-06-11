@@ -36,7 +36,7 @@
         _successHandlers = [NSMutableArray new];
         _errorHandlers = [NSMutableArray new];
         _progressHandlers = [NSMutableArray new];
-        _params = [NSMutableDictionary new];
+        _params = nil;
     }
     return self;
 }
@@ -45,6 +45,10 @@
     assert(key != nil);
     assert(param != nil);
     
+    if (_params == nil)
+    {
+        _params = [NSMutableDictionary new];
+    }
     [_params setObject:param forKey:key];
 }
 
@@ -60,6 +64,10 @@
        [param isKindOfClass:[NSDictionary class]]
        )
     {
+        if (_params == nil)
+        {
+            _params = [NSMutableDictionary new];
+        }
         [_params setObject:param forKey:key];
     }
     else
