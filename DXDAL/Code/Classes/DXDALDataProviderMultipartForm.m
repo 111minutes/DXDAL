@@ -18,12 +18,23 @@
 //    return [[DXDALRequestMultipartForm alloc] initWithDataProvider:self];
 //}
 
-- (NSURLRequest*)urlRequestFromRequest:(DXDALRequestHTTP*) httpRequest{
+- (NSMutableURLRequest*)urlRequestFromRequest:(DXDALRequestHTTP*) httpRequest{
     DXDALRequestMultipartForm *multipartFormRequest = (DXDALRequestMultipartForm*) httpRequest;
-    NSURLRequest *urlRequest = [self.httpClient multipartFormRequestWithMethod:multipartFormRequest.httpMethod path:multipartFormRequest.httpPath parameters:multipartFormRequest.params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    NSMutableURLRequest *urlRequest = [self.httpClient multipartFormRequestWithMethod:multipartFormRequest.httpMethod path:multipartFormRequest.httpPath parameters:multipartFormRequest.params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
-        [formData appendPartWithFileURL:[NSURL URLWithString:multipartFormRequest.fileURLstring] name:multipartFormRequest.name error:nil];
+        if (multipartFormRequest.fileURLstring != nil)
+            [formData appendPartWithFileURL:[NSURL URLWithString:multipartFormRequest.fileURLstring] name:multipartFormRequest.name error:nil];
+        else
+            if (multipartFormRequest.fileData != nil)
+                [formData appendPartWithFileData:multipartFormRequest.fileData name:multipartFormRequest.name fileName:[NSString stringWithFormat:@"%@.jpg", multipartFormRequest.name] mimeType:multipartFormRequest.mimeType];
+        //        else
+        //            NSAssert(NO, @"No Data in request");
+        
     }];
+    
+    if (multipartFormRequest.timeout > 0)
+        [urlRequest setTimeoutInterval:multipartFormRequest.timeout];
+    
     return urlRequest;
 }
 
