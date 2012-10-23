@@ -12,4 +12,6 @@
 
 @property (nonatomic) NSTimeInterval expirationInterval;
 
+- (void)checkHTTPMethodForRequest:(DXDALRequestHTTP *)request;
+
 @end

@@ -50,29 +50,11 @@
     NSURLRequest *urlRequest = [self urlRequestFromRequest:httpRequest];
     NSLog(@"start request: %@", [urlRequest URL]);
     
-	AFHTTPRequestOperation *operation = [_httpClient HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id responseObject)
-    {
-        [httpRequest didFinishWithResponseString:operation.responseString 
-                                  responseObject:responseObject 
-                              responseStatusCode:operation.response.statusCode];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSMutableDictionary *userInfo = [[error userInfo] mutableCopy];
-        
-        NSDictionary *serverErrorMessage = [operation.responseString objectFromJSONString];
-        
-        if (serverErrorMessage) {
-            [userInfo setObject:serverErrorMessage forKey:@"ErrorMessage"];
-        }
-        
-        
-        NSError *innerError = [[NSError alloc] initWithDomain:@"DXDAL" 
-                                                         code:operation.response.statusCode 
-                                                     userInfo:userInfo];
-        
-        [httpRequest didFailWithResponse:innerError];
-    }];
+    DXDALAFSuccessHandler success = [self successHandlerWithHTTPRequest:httpRequest];
+    DXDALAFErrorHandler failure = [self errorHandlerWithHTTPRequest:httpRequest];
+	AFHTTPRequestOperation *operation = [_httpClient HTTPRequestOperationWithRequest:urlRequest
+                                                                             success:success
+                                                                             failure:failure];
     
     
     void (^progressBlock)(NSInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead);
@@ -84,6 +66,37 @@
     [operation setDownloadProgressBlock:progressBlock];
     
     return operation;
+}
+
+- (DXDALAFSuccessHandler)successHandlerWithHTTPRequest:(DXDALRequestHTTP*)httpRequest
+{
+    return ^(AFHTTPRequestOperation *operation, id responseObject) {
+        [httpRequest didFinishWithResponseString:operation.responseString
+                                  responseObject:responseObject
+                              responseStatusCode:operation.response.statusCode];
+        
+    };
+}
+
+- (DXDALAFErrorHandler)errorHandlerWithHTTPRequest:(DXDALRequestHTTP*)httpRequest
+{
+    return ^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSMutableDictionary *userInfo = [[error userInfo] mutableCopy];
+        
+        NSDictionary *serverErrorMessage = [operation.responseString objectFromJSONString];
+        
+        if (serverErrorMessage) {
+            [userInfo setObject:serverErrorMessage forKey:@"ErrorMessage"];
+        }
+        
+        
+        NSError *innerError = [[NSError alloc] initWithDomain:@"DXDAL"
+                                                         code:operation.response.statusCode
+                                                     userInfo:userInfo];
+        
+        [httpRequest didFailWithResponse:innerError];
+    };
 }
 
 @end

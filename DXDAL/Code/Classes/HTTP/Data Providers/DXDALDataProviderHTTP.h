@@ -9,6 +9,9 @@
 #import "DXDALDataProvider.h"
 #import "DXDALHTTPClient.h"
 
+typedef void (^DXDALAFSuccessHandler)(AFHTTPRequestOperation *operation, id responseObject);
+typedef void (^DXDALAFErrorHandler)(AFHTTPRequestOperation *operation, NSError *error);
+
 @class DXDALRequestHTTP;
 
 @interface DXDALDataProviderHTTP : NSObject <DXDALDataProvider> 
@@ -17,6 +20,9 @@
 
 - (NSURLRequest*) urlRequestFromRequest:(DXDALRequestHTTP*) httpRequest;
 - (AFHTTPRequestOperation*) operationFromRequest:(DXDALRequestHTTP*) httpRequest;
+
+- (DXDALAFSuccessHandler)successHandlerWithHTTPRequest:(DXDALRequestHTTP*)httpRequest;
+- (DXDALAFErrorHandler)errorHandlerWithHTTPRequest:(DXDALRequestHTTP*)httpRequest;
 
 @property (nonatomic, strong) DXDALHTTPClient *httpClient;
 

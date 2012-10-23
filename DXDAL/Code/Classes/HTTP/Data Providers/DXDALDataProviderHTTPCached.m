@@ -18,9 +18,6 @@
 #define kResponseStringKey @"responseString"
 #define kResponseDataKey @"responseData"
 
-typedef void (^SuccessHandler)(AFHTTPRequestOperation *operation, id responseObject);
-typedef void (^ErrorHandler)(AFHTTPRequestOperation *operation, NSError *error);
-
 @interface DXDALDataProviderHTTPCached ()
 
 - (NSDictionary *)dictionaryWithResponseString:(NSString *)responseString
@@ -35,22 +32,10 @@ typedef void (^ErrorHandler)(AFHTTPRequestOperation *operation, NSError *error);
 @end
 
 @implementation DXDALDataProviderHTTPCached
-//@synthesize httpClient = _httpClient;
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // by default we have max lifetime for cached object
-        self.expirationInterval = DBL_MAX;
-    }
-    return self;
-}
 
 - (id)initWithBaseURL:(NSURL*)aBaseURL {
-    self = [super init];
+    self = [super initWithBaseURL:aBaseURL];
     if (self) {
-        self.httpClient = [[DXDALHTTPClient alloc] initWithBaseURL:aBaseURL];
         self.expirationInterval = DBL_MAX;
     }
     return self;
@@ -98,11 +83,16 @@ typedef void (^ErrorHandler)(AFHTTPRequestOperation *operation, NSError *error);
     return [request.httpPath stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
 }
 
+- (void)checkHTTPMethodForRequest:(DXDALRequestHTTP *)request
+{
+    BOOL isHTTPMethodGET = [request.httpMethod.capitalizedString isEqualToString:@"GET"];
+    NSAssert(isHTTPMethodGET, @"DXDALDataProviderHTTPCached : You should use request only with GET HTTP method");
+}
+
 - (void)enqueueRequest:(DXDALRequestHTTP *)aRequest
 {
     assert(aRequest != nil);
-    //BOOL isHTTPMethodGET = [((DXDALRequestHTTP *)aRequest).httpMethod.capitalizedString isEqualToString:@"GET"];
-    //NSAssert(isHTTPMethodGET, @"DXDALDataProviderHTTPCached : You should use request only with GET HTTP method");
+    [self checkHTTPMethodForRequest:aRequest];
     
     [self.httpClient clearDefaultHeaders];
     
@@ -134,13 +124,10 @@ typedef void (^ErrorHandler)(AFHTTPRequestOperation *operation, NSError *error);
     }
 }
 
-- (SuccessHandler)successHandlerWithHTTPRequest:(DXDALRequestHTTP*)httpRequest
+- (DXDALAFSuccessHandler)successHandlerWithHTTPRequest:(DXDALRequestHTTP*)httpRequest
 {
     return ^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        //NSString *assertMessage = @"DXDALDataProviderHTTPCached: Response object should be of NSDictionary class";
-        //NSAssert([responseObject isKindOfClass:[NSDictionary class]], assertMessage);
-        
+                
         EGOCache *cache = [EGOCache currentCache];
         NSDictionary *responseDictionary = [self dictionaryWithResponseString:operation.responseString
                                                                  responseData:responseObject
@@ -154,33 +141,11 @@ typedef void (^ErrorHandler)(AFHTTPRequestOperation *operation, NSError *error);
     };
 }
 
-- (ErrorHandler)errorHandlerWithHTTPRequest:(DXDALRequestHTTP*)httpRequest
+- (DXDALAFErrorHandler)errorHandlerWithHTTPRequest:(DXDALRequestHTTP*)httpRequest
 {
     return ^(AFHTTPRequestOperation *operation, NSError *error) {
         [httpRequest didFailWithResponse:error];
     };
-}
-
-- (AFHTTPRequestOperation*)operationFromRequest:(DXDALRequestHTTP*)httpRequest
-{
-    NSURLRequest *urlRequest = [self urlRequestFromRequest:httpRequest];
-    
-    SuccessHandler success = [self successHandlerWithHTTPRequest:httpRequest];
-    ErrorHandler failure = [self errorHandlerWithHTTPRequest:httpRequest];
-    
-    AFHTTPRequestOperation *operation = [self.httpClient HTTPRequestOperationWithRequest:urlRequest
-                                                                                 success:success
-                                                                                 failure:failure];
-    
-    void (^progressBlock)(NSInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead);
-    progressBlock = ^(NSInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead) {
-        float progress =  (float)totalBytesRead / (float)totalBytesExpectedToRead;
-        float delta = (float)bytesRead / (float)totalBytesExpectedToRead;
-        [httpRequest didChangeProgressValue:progress progressDelta:delta];
-    };
-    [operation setDownloadProgressBlock:progressBlock];
-    
-    return operation;
 }
 
 @end
