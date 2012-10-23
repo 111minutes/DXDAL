@@ -19,7 +19,7 @@
 - (id)initWithBaseURL:(NSURL*)aBaseURL {
     self = [super init];
     if (self) {
-        _httpClient = [[DXDALHTTPClient alloc] initWithBaseURL:aBaseURL];
+        self.httpClient = [[DXDALHTTPClient alloc] initWithBaseURL:aBaseURL];
     }
     return self;
 }

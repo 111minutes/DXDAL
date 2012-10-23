@@ -30,17 +30,27 @@ typedef void (^ErrorHandler)(AFHTTPRequestOperation *operation, NSError *error);
 - (NSString *)cachedResponseStringFromDcitionary:(NSDictionary *)dictionary;
 - (id)cachedResponseDataFromDcitionary:(NSDictionary *)dictionary;
 - (NSInteger)cachedResponseStatusCodeFromDcitionary:(NSDictionary *)dictionary;
+- (NSString *)keyFromRequest:(DXDALRequestHTTP *)request;
 
 @end
 
 @implementation DXDALDataProviderHTTPCached
-@synthesize httpClient = _httpClient;
+//@synthesize httpClient = _httpClient;
 
 - (id)init
 {
     self = [super init];
     if (self) {
         // by default we have max lifetime for cached object
+        self.expirationInterval = DBL_MAX;
+    }
+    return self;
+}
+
+- (id)initWithBaseURL:(NSURL*)aBaseURL {
+    self = [super init];
+    if (self) {
+        self.httpClient = [[DXDALHTTPClient alloc] initWithBaseURL:aBaseURL];
         self.expirationInterval = DBL_MAX;
     }
     return self;
@@ -62,7 +72,7 @@ typedef void (^ErrorHandler)(AFHTTPRequestOperation *operation, NSError *error);
 - (NSDictionary *)cachedResponseDictionaryForRequest:(DXDALRequestHTTP *)request
 {
     EGOCache *cache = [EGOCache currentCache];
-    NSData *plistData = [cache plistForKey:request.httpPath];
+    NSData *plistData = [cache dataForKey:[self keyFromRequest:request]];
     NSDictionary *dictionary = [NSKeyedUnarchiver unarchiveObjectWithData:plistData];
     return dictionary;
 }
@@ -83,23 +93,28 @@ typedef void (^ErrorHandler)(AFHTTPRequestOperation *operation, NSError *error);
     return code;
 }
 
+- (NSString *)keyFromRequest:(DXDALRequestHTTP *)request
+{
+    return [request.httpPath stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
+}
+
 - (void)enqueueRequest:(DXDALRequestHTTP *)aRequest
 {
     assert(aRequest != nil);
-    BOOL isHTTPMethodGET = [((DXDALRequestHTTP *)aRequest).httpMethod.capitalizedString isEqualToString:@"GET"];
-    NSAssert(isHTTPMethodGET, @"DXDALDataProviderHTTPCached : You should use request only with GET HTTP method");
+    //BOOL isHTTPMethodGET = [((DXDALRequestHTTP *)aRequest).httpMethod.capitalizedString isEqualToString:@"GET"];
+    //NSAssert(isHTTPMethodGET, @"DXDALDataProviderHTTPCached : You should use request only with GET HTTP method");
     
-    [_httpClient clearDefaultHeaders];
+    [self.httpClient clearDefaultHeaders];
     
     DXDALRequestHTTP *httpRequest = (DXDALRequestHTTP*)aRequest;
     if (httpRequest.defaultHTTPHeaders){
         for (NSString *key in [httpRequest.defaultHTTPHeaders allKeys]){
-            [_httpClient setDefaultHeader:key value:[httpRequest.defaultHTTPHeaders objectForKey:key]];
+            [self.httpClient setDefaultHeader:key value:[httpRequest.defaultHTTPHeaders objectForKey:key]];
         }
     }
     
     EGOCache *cache = [EGOCache currentCache];
-    BOOL isExistsValue = [cache hasCacheForKey:aRequest.httpPath];
+    BOOL isExistsValue = [cache dataForKey:[self keyFromRequest:aRequest]] != nil;
     if (isExistsValue) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -115,7 +130,7 @@ typedef void (^ErrorHandler)(AFHTTPRequestOperation *operation, NSError *error);
         });
     } else {
         AFHTTPRequestOperation *operation = [self operationFromRequest:httpRequest];
-        [_httpClient enqueueHTTPRequestOperation:operation];
+        [self.httpClient enqueueHTTPRequestOperation:operation];
     }
 }
 
@@ -123,19 +138,19 @@ typedef void (^ErrorHandler)(AFHTTPRequestOperation *operation, NSError *error);
 {
     return ^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSString *assertMessage = @"DXDALDataProviderHTTPCached: Response object should be of NSDictionary class";
-        NSAssert([responseObject isKindOfClass:[NSDictionary class]], assertMessage);
-        
-        [httpRequest didFinishWithResponseString:operation.responseString
-                                  responseObject:responseObject
-                              responseStatusCode:operation.response.statusCode];
-        
+        //NSString *assertMessage = @"DXDALDataProviderHTTPCached: Response object should be of NSDictionary class";
+        //NSAssert([responseObject isKindOfClass:[NSDictionary class]], assertMessage);
         
         EGOCache *cache = [EGOCache currentCache];
         NSDictionary *responseDictionary = [self dictionaryWithResponseString:operation.responseString
                                                                  responseData:responseObject
                                                                    statusCode:operation.response.statusCode];
-        [cache setPlist:responseDictionary forKey:httpRequest.httpPath withTimeoutInterval:self.expirationInterval];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:responseDictionary];
+        [cache setData:data forKey:[self keyFromRequest:httpRequest] withTimeoutInterval:self.expirationInterval];
+        
+        [httpRequest didFinishWithResponseString:operation.responseString
+                                  responseObject:responseObject
+                              responseStatusCode:operation.response.statusCode];
     };
 }
 
