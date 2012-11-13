@@ -17,32 +17,37 @@
 @synthesize parser;
 @synthesize mapper;
 
-- (id) initWithDataProvider:(id<DXDALDataProvider>)dataProvider
-{
+- (id)initWithDataProvider:(id<DXDALDataProvider>)dataProvider {
+    
     self = [super initWithDataProvider:dataProvider];
-    if (self)
-    {
+    if (self) {
         self.mapper = [DXDALMapperStandart new];
     }
     return self;
 }
 
-- (NSString*)httpMethod {
+- (NSString *)httpMethod {
     return [_httpMethod uppercaseString];
 }
 
-- (void) didFinishWithResponseString:(NSString *)responseString 
-                      responseObject:(id)responseObject 
-                  responseStatusCode:(NSInteger)responseStatusCode {
+- (void)didFinishWithResponseString:(NSString *)responseString
+                     responseObject:(id)responseObject
+                 responseStatusCode:(NSInteger)responseStatusCode {
 
     id parsedObject;
     if (responseString != nil) {
-        parsedObject = [self.parser parseString:responseString];
-        id result = [self.mapper mapFromInputData:parsedObject withClass:self.entityClass];
-        [self didFinishWithResponse:result];
+        
+        if (self.parser && self.entityClass) {
+            parsedObject = [self.parser parseString:responseString];
+            id result = [self.mapper mapFromInputData:parsedObject withClass:self.entityClass];
+            [self didFinishWithResponse:result];
+        } else {
+            [self didFinishWithResponse:responseString];
+        }
+        
     } else if ([responseObject isKindOfClass:[NSData class]]) {
         [self didFinishWithResponse:responseObject];
-    } 
+    }
 }
 
 @end
