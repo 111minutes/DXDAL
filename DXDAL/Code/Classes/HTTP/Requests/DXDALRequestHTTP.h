@@ -11,6 +11,7 @@
 @protocol DXDALParser;
 @protocol DXDALMapper;
 
+@class AFHTTPRequestOperation;
 
 @interface DXDALRequestHTTP : DXDALRequest
 
@@ -18,6 +19,8 @@
 @property(nonatomic, readwrite, strong) NSString *httpMethod;
 @property(nonatomic, readwrite, strong) NSString *httpPath;
 @property(nonatomic, readwrite, strong) NSDictionary *defaultHTTPHeaders;
+
+@property (nonatomic, weak)  AFHTTPRequestOperation *requestOperation;
 
 @property (nonatomic, assign) Class entityClass;
 @property (nonatomic, strong) id<DXDALParser> parser;

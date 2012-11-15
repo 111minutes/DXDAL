@@ -60,4 +60,11 @@
     }
 }
 
+- (void)stop
+{
+    [_requestOperation cancel];
+    
+    [super stop];
+}
+
 @end
