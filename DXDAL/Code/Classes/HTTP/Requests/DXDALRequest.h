@@ -4,8 +4,8 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
-
 #import <Foundation/Foundation.h>
+#import <AFNetworking-Fork/AFHTTPRequestOperation.h>
 
 @protocol DXDALConfigurableRequest;
 @protocol DXDALDataProvider;

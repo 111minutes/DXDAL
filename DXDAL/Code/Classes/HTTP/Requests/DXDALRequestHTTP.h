@@ -4,14 +4,10 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
-
-#import <Foundation/Foundation.h>
 #import "DXDALRequest.h"
 
 @protocol DXDALParser;
 @protocol DXDALMapper;
-
-@class AFHTTPRequestOperation;
 
 @interface DXDALRequestHTTP : DXDALRequest
 
