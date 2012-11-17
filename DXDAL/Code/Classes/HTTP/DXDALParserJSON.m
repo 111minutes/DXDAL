@@ -15,7 +15,6 @@
 - (id) parseString:(NSString *)aString
 {
     return [aString objectFromJSONString];
-}
-
+}	
 
 @end
