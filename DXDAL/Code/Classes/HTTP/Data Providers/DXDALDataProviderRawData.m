@@ -18,12 +18,4 @@
     
     return urlRequest;
 }
-
-- (AFHTTPRequestOperation *)operationFromRequest:(DXDALRequestHTTP *)aHttpRequest {
-    
-    AFHTTPRequestOperation *operation = [super operationFromRequest:aHttpRequest];
-    
-    return operation;
-}
-
 @end
