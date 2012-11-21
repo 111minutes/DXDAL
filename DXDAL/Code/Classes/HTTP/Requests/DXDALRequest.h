@@ -51,4 +51,6 @@ typedef void (^DXDALProgressHandler)(float currentProgress, float progressDelta)
 - (void)didFailWithResponse:(id)response;
 - (void)didChangeProgressValue:(float)progressValue progressDelta:(float)progressDelta;
 
+- (void)removeAllHandlers;
+
 @end
