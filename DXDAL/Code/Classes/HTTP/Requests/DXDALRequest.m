@@ -146,4 +146,13 @@
     }
 }
 
+- (void)removeAllHandlers
+{
+    [_requestDidStartHandlers removeAllObjects];
+    [_requestDidStopHandlers removeAllObjects];
+    [_successHandlers removeAllObjects];
+    [_errorHandlers removeAllObjects];
+    [_progressHandlers removeAllObjects];
+}
+
 @end
