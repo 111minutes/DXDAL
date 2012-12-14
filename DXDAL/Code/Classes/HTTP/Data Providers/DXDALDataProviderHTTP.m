@@ -91,6 +91,8 @@
         
         if (serverErrorMessage) {
             [userInfo setObject:serverErrorMessage forKey:@"ErrorMessage"];
+        } else if (operation.responseString) {
+            [userInfo setObject:operation.responseString forKey:@"ErrorMessage"];
         }
         
         
