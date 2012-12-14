@@ -10,4 +10,5 @@
 
 @interface DXDALRequestHTTPRawData : DXDALRequestHTTP
 
+@property (nonatomic, strong) NSData *rawData;
 @end
