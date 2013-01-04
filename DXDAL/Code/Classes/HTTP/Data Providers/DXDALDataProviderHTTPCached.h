@@ -6,6 +6,10 @@
 //  Copyright (c) 2012 111Minutes. All rights reserved.
 //
 
+#import <AFNetworking/AFNetworking.h>
+#import <JSONKit/JSONKit.h>
+#import <EGOCache/EGOCache.h>
+
 #import "DXDALDataProviderHTTP.h"
 
 @interface DXDALDataProviderHTTPCached : DXDALDataProviderHTTP

@@ -4,10 +4,7 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
-
 #import "DXDALDataProviderHTTP.h"
-#import "AFNetworking.h"
-#import "JSONKit.h"
 #import "DXDALRequestHTTP.h"
 #import "DXDALParser.h"
 #import "DXDALMapper.h"

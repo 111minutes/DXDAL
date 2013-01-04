@@ -7,10 +7,7 @@
 //
 
 #import "DXDALDataProviderMultipartForm.h"
-
 #import "DXDALRequestMultipartForm.h"
-#import "AFNetworking.h"
-#import "JSONKit.h"
 
 @implementation DXDALDataProviderMultipartForm
 
