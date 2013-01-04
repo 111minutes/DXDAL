@@ -14,7 +14,6 @@
 		AD9CC4CF1500249100FEBE10 /* DXDALMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C41500249100FEBE10 /* DXDALMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD9CC4D01500249100FEBE10 /* DXDALParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C51500249100FEBE10 /* DXDALParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD9CC4D11500249100FEBE10 /* DXDALRequestFactoryProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C61500249100FEBE10 /* DXDALRequestFactoryProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD9CC4D4150026D500FEBE10 /* DXDAL.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9CC4C01500249100FEBE10 /* DXDAL.h */; };
 		AD9CC4DB1500277A00FEBE10 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9CC4DA1500277A00FEBE10 /* libPods-tests.a */; };
 		AD9CC4E0150027E700FEBE10 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9CC4DF150027E700FEBE10 /* SystemConfiguration.framework */; };
 		ADBA51B41500E4FB004F3003 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38EA15002300007349BC /* UIKit.framework */; };
@@ -30,6 +29,7 @@
 		ADDC38EB15002300007349BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38EA15002300007349BC /* UIKit.framework */; };
 		ADDC38EC15002300007349BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38DA15002300007349BC /* Foundation.framework */; };
 		ADDC38EF15002300007349BC /* libDXDAL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC38D715002300007349BC /* libDXDAL.a */; };
+		BC2A3C7D169702CF00BEC795 /* DXDAL.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2A3C7C169702CF00BEC795 /* DXDAL.h */; };
 		E75589B616303F1000A1595C /* DXDALDataProviderHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = E755899816303F1000A1595C /* DXDALDataProviderHTTP.h */; };
 		E75589B716303F1000A1595C /* DXDALDataProviderHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = E755899916303F1000A1595C /* DXDALDataProviderHTTP.m */; };
 		E75589B816303F1000A1595C /* DXDALDataProviderHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = E755899916303F1000A1595C /* DXDALDataProviderHTTP.m */; };
@@ -110,7 +110,6 @@
 		AD99829F150A1358005D8D1F /* UserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSession.m; sourceTree = "<group>"; };
 		AD9982A1150A1B41005D8D1F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		AD9982A2150A1B41005D8D1F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		AD9CC4C01500249100FEBE10 /* DXDAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDAL.h; sourceTree = "<group>"; };
 		AD9CC4C21500249100FEBE10 /* DXDALConfigurableRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALConfigurableRequest.h; sourceTree = "<group>"; };
 		AD9CC4C31500249100FEBE10 /* DXDALDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALDataProvider.h; sourceTree = "<group>"; };
 		AD9CC4C41500249100FEBE10 /* DXDALMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALMapper.h; sourceTree = "<group>"; };
@@ -133,6 +132,7 @@
 		ADDC38E815002300007349BC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		ADDC38EA15002300007349BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BB311C521B0F439C8B445314 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC2A3C7C169702CF00BEC795 /* DXDAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDAL.h; sourceTree = "<group>"; };
 		E755899816303F1000A1595C /* DXDALDataProviderHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALDataProviderHTTP.h; sourceTree = "<group>"; };
 		E755899916303F1000A1595C /* DXDALDataProviderHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALDataProviderHTTP.m; sourceTree = "<group>"; };
 		E755899A16303F1000A1595C /* DXDALDataProviderMultipartForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALDataProviderMultipartForm.h; sourceTree = "<group>"; };
@@ -208,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				AD9CC4BB1500249100FEBE10 /* Classes */,
-				AD9CC4C01500249100FEBE10 /* DXDAL.h */,
 				AD9CC4C11500249100FEBE10 /* Protocols */,
 			);
 			path = Code;
@@ -217,6 +216,7 @@
 		AD9CC4BB1500249100FEBE10 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BC2A3C7C169702CF00BEC795 /* DXDAL.h */,
 				E755899616303F1000A1595C /* HTTP */,
 			);
 			path = Classes;
@@ -395,7 +395,6 @@
 				AD9CC4D01500249100FEBE10 /* DXDALParser.h in Headers */,
 				AD9CC4D11500249100FEBE10 /* DXDALRequestFactoryProtocol.h in Headers */,
 				AD9CC4CD1500249100FEBE10 /* DXDALConfigurableRequest.h in Headers */,
-				AD9CC4D4150026D500FEBE10 /* DXDAL.h in Headers */,
 				E75589B616303F1000A1595C /* DXDALDataProviderHTTP.h in Headers */,
 				E75589BA16303F1000A1595C /* DXDALDataProviderMultipartForm.h in Headers */,
 				E75589BE16303F1000A1595C /* DXDALDataProviderMultipartFormStreaming.h in Headers */,
@@ -411,6 +410,7 @@
 				E75589E616303F1000A1595C /* DXDALRequestMultipartForm.h in Headers */,
 				E75589EA16303F1000A1595C /* DXDALRequestMultipartStreaming.h in Headers */,
 				E75589F016303F7600A1595C /* DXDALDataProviderHTTPCached.h in Headers */,
+				BC2A3C7D169702CF00BEC795 /* DXDAL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
