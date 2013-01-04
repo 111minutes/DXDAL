@@ -5,7 +5,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking-Fork/AFHTTPRequestOperation.h>
+#import <AFNetworking/AFHTTPRequestOperation.h>
 
 @protocol DXDALConfigurableRequest;
 @protocol DXDALDataProvider;
