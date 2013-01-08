@@ -10,6 +10,19 @@
 
 @implementation DXDALHTTPClient
 
+
+- (NSMutableURLRequest *)rawDataRequestWithMethod:(NSString *)method
+                                             path:(NSString *)path
+                                       parameters:(NSDictionary *)parameters
+                                          rawData:(NSData *)rawData
+{
+    NSMutableURLRequest *request = [self requestWithMethod:method path:path parameters:nil];
+    
+    [request setHTTPBody:rawData];
+    
+    return request;
+}
+
 - (void) clearDefaultHeaders
 {
     NSMutableDictionary *defaultHeaders = [self valueForKey:@"_defaultHeaders"];
