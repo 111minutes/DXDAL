@@ -10,6 +10,11 @@
 
 @interface DXDALHTTPClient : AFHTTPClient
 
+- (NSMutableURLRequest *)rawDataRequestWithMethod:(NSString *)method
+                                             path:(NSString *)path
+                                       parameters:(NSDictionary *)parameters
+                                          rawData:(NSData *)rawData;
+
 - (void) clearDefaultHeaders;
 
 @end

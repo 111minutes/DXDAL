@@ -12,15 +12,15 @@
 @interface DXDALRequest () <DXDALConfigurableRequest>
 
 @property (nonatomic, strong, readwrite) NSMutableDictionary *params;
-@property (nonatomic, strong) NSMutableArray *requestDidStartHandlers;
-@property (nonatomic, strong) NSMutableArray *requestDidStopHandlers;
-@property (nonatomic, strong) NSMutableArray *successHandlers;
-@property (nonatomic, strong) NSMutableArray *errorHandlers;
-@property (nonatomic, strong) NSMutableArray *progressHandlers;
 
 @end
 
 @implementation DXDALRequest {
+    NSMutableArray *_requestDidStartHandlers;
+    NSMutableArray *_successHandlers;
+    NSMutableArray *_errorHandlers;
+    NSMutableArray *_progressHandlers;
+    
     __unsafe_unretained id<DXDALDataProvider> _dataProvider;
 }
 
@@ -33,7 +33,6 @@
     if (self) {
         _dataProvider = dataProvider;
         _requestDidStartHandlers = [NSMutableArray new];
-        _requestDidStopHandlers = [NSMutableArray new];
         _successHandlers = [NSMutableArray new];
         _errorHandlers = [NSMutableArray new];
         _progressHandlers = [NSMutableArray new];
@@ -82,12 +81,6 @@
     [_requestDidStartHandlers addObject:handler];
 }
 
-- (void)addRequestDidStopHandler:(DXDALRequestDidStopHandler)handler
-{
-    assert(handler != nil);
-    [_requestDidStopHandlers addObject:handler];
-}
-
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler {
     assert(handler != nil);
     [_successHandlers addObject:[handler copy]];
@@ -113,11 +106,7 @@
 }
 
 - (void)stop {
-    for (DXDALRequestDidStopHandler handler in _requestDidStopHandlers) {
-        if (handler) {
-            handler(self);
-        }
-    }
+
 }
 
 - (void)pause {

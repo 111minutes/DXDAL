@@ -4,8 +4,8 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
+
 #import <Foundation/Foundation.h>
-#import <AFNetworking-Fork/AFHTTPRequestOperation.h>
 
 @protocol DXDALConfigurableRequest;
 @protocol DXDALDataProvider;
@@ -13,7 +13,6 @@
 @class DXDALRequestResponse, DXDALRequest;
 
 typedef void (^DXDALRequestDidStartHandler)(DXDALRequest *request);
-typedef void (^DXDALRequestDidStopHandler)(DXDALRequest *request);
 
 typedef void (^DXDALRequestSuccesHandler)(id response);
 
@@ -28,7 +27,6 @@ typedef void (^DXDALProgressHandler)(float currentProgress, float progressDelta)
 - (id)initWithDataProvider:(id<DXDALDataProvider>)dataProvider;
 
 - (void)addRequestDidStartHandler:(DXDALRequestDidStartHandler)handler;
-- (void)addRequestDidStopHandler:(DXDALRequestDidStopHandler)handler;
 
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler;
 

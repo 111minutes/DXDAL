@@ -17,54 +17,32 @@
 @synthesize parser;
 @synthesize mapper;
 
-- (id)initWithDataProvider:(id<DXDALDataProvider>)dataProvider {
-    
+- (id) initWithDataProvider:(id<DXDALDataProvider>)dataProvider
+{
     self = [super initWithDataProvider:dataProvider];
-    if (self) {
+    if (self)
+    {
         self.mapper = [DXDALMapperStandart new];
     }
     return self;
 }
 
-- (NSString *)httpMethod {
+- (NSString*)httpMethod {
     return [_httpMethod uppercaseString];
 }
 
-- (void)didFinishWithResponseString:(NSString *)responseString
-                     responseObject:(id)responseObject
-                 responseStatusCode:(NSInteger)responseStatusCode {
+- (void) didFinishWithResponseString:(NSString *)responseString 
+                      responseObject:(id)responseObject 
+                  responseStatusCode:(NSInteger)responseStatusCode {
 
+    id parsedObject;
     if (responseString != nil) {
-        
-        id result = nil;
-        
-        if (self.parser) {
-            id parsedObject = [self.parser parseString:responseString];
-            
-            BOOL isStandartMapperWithEntityClass = self.entityClass && [self.mapper isKindOfClass:[DXDALMapperStandart class]];
-            BOOL isCustomMapper = ![self.mapper isKindOfClass:[DXDALMapperStandart class]];
-            BOOL canMap = self.mapper && (isStandartMapperWithEntityClass || isCustomMapper);
-            if (canMap) {
-                result = [self.mapper mapFromInputData:parsedObject withClass:self.entityClass];
-            } else {
-                result = parsedObject;
-            }
-        } else {
-            result = responseString;
-        }
-        
+        parsedObject = [self.parser parseString:responseString];
+        id result = [self.mapper mapFromInputData:parsedObject withClass:self.entityClass];
         [self didFinishWithResponse:result];
-        
     } else if ([responseObject isKindOfClass:[NSData class]]) {
         [self didFinishWithResponse:responseObject];
     }
-}
-
-- (void)stop
-{
-    [_requestOperation cancel];
-    
-    [super stop];
 }
 
 @end

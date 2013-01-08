@@ -37,9 +37,6 @@
     }
     
     AFHTTPRequestOperation *operation = [self operationFromRequest:httpRequest];
-    
-    httpRequest.requestOperation = operation;
-    
     [_httpClient enqueueHTTPRequestOperation:operation];
 }
 
@@ -94,7 +91,6 @@
         } else if (operation.responseString) {
             [userInfo setObject:operation.responseString forKey:@"ErrorMessage"];
         }
-        
         
         NSError *innerError = [[NSError alloc] initWithDomain:@"DXDAL"
                                                          code:operation.response.statusCode
