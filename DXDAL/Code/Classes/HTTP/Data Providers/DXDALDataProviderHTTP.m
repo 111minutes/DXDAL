@@ -34,6 +34,9 @@
     }
     
     AFHTTPRequestOperation *operation = [self operationFromRequest:httpRequest];
+    
+    httpRequest.requestOperation = operation;
+    
     [_httpClient enqueueHTTPRequestOperation:operation];
 }
 
