@@ -7,10 +7,7 @@
 //
 
 #import "DXDALDataProviderMultipartForm.h"
-
 #import "DXDALRequestMultipartForm.h"
-#import "AFNetworking.h"
-#import "JSONKit.h"
 
 @implementation DXDALDataProviderMultipartForm
 
@@ -47,7 +44,7 @@
     __block NSString *videoURL = httpRequest.fileURLstring;
     __block NSInteger prevNotificationBytesCount = 0;
     
-    [operation setUploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+    [operation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
         
         int part = totalBytesExpectedToWrite / 20;
         

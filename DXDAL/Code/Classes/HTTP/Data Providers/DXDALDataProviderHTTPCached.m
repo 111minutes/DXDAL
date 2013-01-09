@@ -7,12 +7,9 @@
 //
 
 #import "DXDALDataProviderHTTPCached.h"
-#import "AFNetworking.h"
-#import "JSONKit.h"
 #import "DXDALRequestHTTP.h"
 #import "DXDALParser.h"
 #import "DXDALMapper.h"
-#import "EGOCache.h"
 
 #define kStatusCodeKey @"statusCode"
 #define kResponseStringKey @"responseString"
