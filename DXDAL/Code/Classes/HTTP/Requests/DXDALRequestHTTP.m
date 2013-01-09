@@ -35,12 +35,27 @@
                       responseObject:(id)responseObject
                   responseStatusCode:(NSInteger)responseStatusCode {
     
-    id parsedObject;
-    
     if (responseString != nil) {
         
-        parsedObject = [self.parser parseString:responseString];
-        id result = [self.mapper mapFromInputData:parsedObject withClass:self.entityClass];
+        id result = nil;
+        
+        if (self.parser) {
+            
+            id parsedObject = [self.parser parseString:responseString];
+            
+            BOOL isStandartMapperWithEntityClass = self.entityClass && [self.mapper isKindOfClass:[DXDALMapperStandart class]];
+            BOOL isCustomMapper = ![self.mapper isKindOfClass:[DXDALMapperStandart class]];
+            BOOL canMap = self.mapper && (isStandartMapperWithEntityClass || isCustomMapper);
+            
+            if (canMap) {
+                result = [self.mapper mapFromInputData:parsedObject withClass:self.entityClass];
+            } else {
+                result = parsedObject;
+            }
+            
+        } else {
+            result = responseString;
+        }
         
         [self didFinishWithResponse:result];
         
