@@ -19,6 +19,8 @@
 @property(nonatomic, readwrite, strong) NSString *httpPath;
 @property(nonatomic, readwrite, strong) NSDictionary *defaultHTTPHeaders;
 
+@property (nonatomic, weak)  AFHTTPRequestOperation *requestOperation;
+
 @property (nonatomic, assign) Class entityClass;
 @property (nonatomic, strong) id<DXDALParser> parser;
 @property (nonatomic, strong) id<DXDALMapper> mapper;
