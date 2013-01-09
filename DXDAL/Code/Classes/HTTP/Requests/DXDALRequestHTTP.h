@@ -14,7 +14,6 @@
 
 @interface DXDALRequestHTTP : DXDALRequest
 
-
 @property(nonatomic, readwrite, strong) NSString *httpMethod;
 @property(nonatomic, readwrite, strong) NSString *httpPath;
 @property(nonatomic, readwrite, strong) NSDictionary *defaultHTTPHeaders;
@@ -24,6 +23,9 @@
 @property (nonatomic, assign) Class entityClass;
 @property (nonatomic, strong) id<DXDALParser> parser;
 @property (nonatomic, strong) id<DXDALMapper> mapper;
+
+@property (nonatomic, strong) NSString *jsonValidationPatternFileName;
+
 
 - (void) didFinishWithResponseString:(NSString *)responseString 
                       responseObject:(id)responseObject 
