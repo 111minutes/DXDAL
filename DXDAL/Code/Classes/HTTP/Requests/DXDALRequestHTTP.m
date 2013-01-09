@@ -31,15 +31,19 @@
     return [_httpMethod uppercaseString];
 }
 
-- (void) didFinishWithResponseString:(NSString *)responseString 
-                      responseObject:(id)responseObject 
+- (void) didFinishWithResponseString:(NSString *)responseString
+                      responseObject:(id)responseObject
                   responseStatusCode:(NSInteger)responseStatusCode {
-
+    
     id parsedObject;
+    
     if (responseString != nil) {
+        
         parsedObject = [self.parser parseString:responseString];
         id result = [self.mapper mapFromInputData:parsedObject withClass:self.entityClass];
+        
         [self didFinishWithResponse:result];
+        
     } else if ([responseObject isKindOfClass:[NSData class]]) {
         [self didFinishWithResponse:responseObject];
     }
