@@ -60,8 +60,8 @@
                                                                              failure:failure];
     
     
-    void (^progressBlock)(NSInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead);
-    progressBlock = ^(NSInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead) {
+    void (^progressBlock)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead);
+    progressBlock = ^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
         float progress =  (float)totalBytesRead / (float)totalBytesExpectedToRead;
         float delta = (float)bytesRead / (float)totalBytesExpectedToRead;
         [httpRequest didChangeProgressValue:progress progressDelta:delta];

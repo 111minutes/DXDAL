@@ -16,6 +16,11 @@
     return [[DXDALDataProviderHTTP alloc] initWithBaseURL:[NSURL URLWithString:@"http://0.0.0.0:3000"]];
 }
 
+- (Class)getDefaultRequestClass
+{
+    return [DXDALRequestHTTP class];
+}
+
 - (void)setupDefaults {
     
 }

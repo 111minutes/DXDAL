@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DXDALRequest.h"
+#import "AFNetworking.h"
 
 @protocol DXDALParser;
 @protocol DXDALMapper;
