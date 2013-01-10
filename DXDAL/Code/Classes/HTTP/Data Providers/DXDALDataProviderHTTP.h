@@ -6,6 +6,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import "AFNetworking.h"
 #import "DXDALDataProvider.h"
 #import "DXDALHTTPClient.h"
 

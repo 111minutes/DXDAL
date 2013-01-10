@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFNetworking.h"
 #import "DXDALDataProviderHTTP.h"
 
 #define VideoUploadingProgressNotificationName @"VideoUploadingProgressNotificationName"

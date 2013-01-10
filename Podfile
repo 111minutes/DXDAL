@@ -1,7 +1,7 @@
-platform :ios
+platform :ios, '5.0'
 
 pod 'JSONKit'
-pod 'AFNetworking-Fork'
+pod 'AFNetworking'
 pod 'Reachability'
 pod 'JTObjectMapping-Fork'
 pod 'EGOCache'
