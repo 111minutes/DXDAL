@@ -46,7 +46,7 @@
             BOOL isStandartMapperWithEntityClass = self.entityClass && [self.mapper isKindOfClass:[DXDALMapperStandart class]];
             BOOL isCustomMapper = ![self.mapper isKindOfClass:[DXDALMapperStandart class]];
             BOOL canMap = self.mapper && (isStandartMapperWithEntityClass || isCustomMapper);
-    
+            
             if (canMap) {
                 result = [self.mapper mapFromInputData:parsedObject withClass:self.entityClass];
             } else {
@@ -56,6 +56,8 @@
         } else {
             result = responseString;
         }
+        
+        [self didFinishWithResponse:result];
         
     } else if ([responseObject isKindOfClass:[NSData class]]) {
         [self didFinishWithResponse:responseObject];
