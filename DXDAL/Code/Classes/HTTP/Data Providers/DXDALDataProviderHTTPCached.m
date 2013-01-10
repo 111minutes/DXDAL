@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 111Minutes. All rights reserved.
 //
 
+#import <AFNetworking/AFNetworking.h>
 #import "DXDALDataProviderHTTPCached.h"
-#import "AFNetworking.h"
 #import "JSONKit.h"
 #import "DXDALRequestHTTP.h"
 #import "DXDALParser.h"

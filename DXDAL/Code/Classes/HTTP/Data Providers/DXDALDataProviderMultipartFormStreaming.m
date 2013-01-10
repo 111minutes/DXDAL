@@ -8,7 +8,7 @@
 
 #import "DXDALDataProviderMultipartFormStreaming.h"
 #import "DXDALRequestMultipartStreaming.h"
-#import "AFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 #import "JSONKit.h"
 
 @implementation DXDALDataProviderMultipartFormStreaming

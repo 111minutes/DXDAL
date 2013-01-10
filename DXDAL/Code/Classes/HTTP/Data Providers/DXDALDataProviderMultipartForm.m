@@ -7,16 +7,11 @@
 //
 
 #import "DXDALDataProviderMultipartForm.h"
-#import "AFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 #import "DXDALRequestMultipartForm.h"
-#import "AFNetworking.h"
 #import "JSONKit.h"
 
 @implementation DXDALDataProviderMultipartForm
-
-//- (DXDALRequest *)prepareRequest {
-//    return [[DXDALRequestMultipartForm alloc] initWithDataProvider:self];
-//}
 
 - (NSMutableURLRequest*)urlRequestFromRequest:(DXDALRequestHTTP*) httpRequest{
     DXDALRequestMultipartForm *multipartFormRequest = (DXDALRequestMultipartForm*) httpRequest;
@@ -27,9 +22,6 @@
         else
             if (multipartFormRequest.fileData != nil)
                 [formData appendPartWithFileData:multipartFormRequest.fileData name:multipartFormRequest.name fileName:[NSString stringWithFormat:@"%@.jpg", multipartFormRequest.name] mimeType:multipartFormRequest.mimeType];
-        //        else
-        //            NSAssert(NO, @"No Data in request");
-        
     }];
     
     if (multipartFormRequest.timeout > 0)
