@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 111Minutes. All rights reserved.
 //
 
-#import "AFHTTPClient.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface DXDALHTTPClient : AFHTTPClient
 
