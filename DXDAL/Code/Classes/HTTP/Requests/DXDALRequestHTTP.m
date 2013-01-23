@@ -61,6 +61,8 @@
         
     } else if ([responseObject isKindOfClass:[NSData class]]) {
         [self didFinishWithResponse:responseObject];
+    } else {
+        [self didFinishWithResponse:@(responseStatusCode)];
     }
 }
 
