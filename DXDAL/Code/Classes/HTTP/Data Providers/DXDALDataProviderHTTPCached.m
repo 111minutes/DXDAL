@@ -85,7 +85,7 @@
 
 - (void)checkHTTPMethodForRequest:(DXDALRequestHTTP *)request
 {
-    BOOL isHTTPMethodGET = [request.httpMethod.capitalizedString isEqualToString:@"GET"];
+    BOOL isHTTPMethodGET = [request.httpMethod.uppercaseString isEqualToString:@"GET"];
     NSAssert(isHTTPMethodGET, @"DXDALDataProviderHTTPCached : You should use request only with GET HTTP method");
 }
 
