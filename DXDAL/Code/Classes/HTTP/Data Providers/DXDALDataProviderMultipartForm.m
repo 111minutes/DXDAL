@@ -21,7 +21,7 @@
             [formData appendPartWithFileURL:[NSURL URLWithString:multipartFormRequest.fileURLstring] name:multipartFormRequest.name error:nil];
         else
             if (multipartFormRequest.fileData != nil)
-                [formData appendPartWithFileData:multipartFormRequest.fileData name:multipartFormRequest.name fileName:[NSString stringWithFormat:@"%@.jpg", multipartFormRequest.name] mimeType:multipartFormRequest.mimeType];
+                [formData appendPartWithFileData:multipartFormRequest.fileData name:multipartFormRequest.name fileName:[NSString stringWithFormat:@"%@.%@", multipartFormRequest.name, multipartFormRequest.fileType] mimeType:multipartFormRequest.mimeType];
     }];
     
     if (multipartFormRequest.timeout > 0)

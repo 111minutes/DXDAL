@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *fileURLstring;
 @property (nonatomic, strong) NSData *fileData;
+@property (nonatomic, strong) NSString * fileType;
 @property (nonatomic, readwrite) int timeout;
 @end
