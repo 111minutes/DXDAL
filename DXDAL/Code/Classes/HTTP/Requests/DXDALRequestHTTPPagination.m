@@ -7,13 +7,9 @@
 //
 
 #import "DXDALRequestHTTPPagination.h"
+#import "DXDALPaginationParser.h"
 
 @implementation DXDALRequestHTTPPagination
-
-@synthesize pageTitle;
-@synthesize countPerPageTitle;
-@synthesize startPageNumber;
-@synthesize countPerPage;
 
 - (id) initWithDataProvider:(id<DXDALDataProvider>)dataProvider
 {
@@ -25,20 +21,31 @@
         self.countPerPageTitle = @"count";
         self.countPerPage = 20;
         self.startPageNumber = 0;
+        self.parser = [DXDALPaginationParser new];
     }
     return self;
 }
 
+- (void)setEntitiesKey:(NSString *)entitiesKey
+{
+    if (_entitiesKey != entitiesKey) {
+        _entitiesKey = entitiesKey;
+        if ([self.parser respondsToSelector:@selector(setEntitiesKey:)]) {
+            [self.parser performSelector:@selector(setEntitiesKey:) withObject:entitiesKey];
+        }
+    }
+}
+
 - (void) loadNextPage
 {
-    [self addParam:[NSString stringWithFormat:@"%d",currentPage] withName:pageTitle];
-    [self addParam:[NSString stringWithFormat:@"%d",countPerPage] withName:countPerPageTitle];
+    [self addParam:[NSString stringWithFormat:@"%d",currentPage] withName:_pageTitle];
+    [self addParam:[NSString stringWithFormat:@"%d",_countPerPage] withName:_countPerPageTitle];
     [super start];
 }
 
 - (void) rezetRequest
 {
-    currentPage = startPageNumber;
+    currentPage = _startPageNumber;
 }
 
 - (void)didFinishWithResponse:(NSDictionary *)response 
@@ -50,8 +57,8 @@
 
 - (void) setStartPageNumber:(NSUInteger)aStartPageNumber
 {
-    startPageNumber = aStartPageNumber;
-    currentPage = startPageNumber;
+    _startPageNumber = aStartPageNumber;
+    currentPage = _startPageNumber;
 }
 
 @end

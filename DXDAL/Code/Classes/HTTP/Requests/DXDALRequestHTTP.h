@@ -27,6 +27,9 @@
 
 @property (nonatomic, strong) NSString *jsonValidationPatternFileName;
 
+@property (nonatomic, assign) NSTimeInterval timeoutInterval;
+@property (nonatomic, assign) BOOL needsBackgrounding;
+
 
 - (void) didFinishWithResponseString:(NSString *)responseString 
                       responseObject:(id)responseObject 

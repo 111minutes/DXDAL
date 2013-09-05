@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSString *countPerPageTitle;
 @property (nonatomic) NSUInteger startPageNumber;
 @property (nonatomic) NSUInteger countPerPage;
+@property (nonatomic, copy) NSString *entitiesKey;
 
 - (void) rezetRequest;
 - (void) loadNextPage;

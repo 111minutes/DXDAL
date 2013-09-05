@@ -10,9 +10,4 @@
 
 @implementation DXDALRequestMultipartForm
 
-@synthesize mimeType;
-@synthesize name;
-@synthesize fileURLstring;
-@synthesize fileData;
-@synthesize timeout;
 @end

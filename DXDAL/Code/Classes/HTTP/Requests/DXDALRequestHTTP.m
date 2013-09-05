@@ -10,18 +10,11 @@
 
 @implementation DXDALRequestHTTP
 
-@synthesize httpMethod = _httpMethod;
-@synthesize httpPath = _httpPath;
-@synthesize defaultHTTPHeaders = _defaultHTTPHeaders;
-@synthesize entityClass;
-@synthesize parser;
-@synthesize mapper;
-
 - (id) initWithDataProvider:(id<DXDALDataProvider>)dataProvider
 {
     self = [super initWithDataProvider:dataProvider];
-    if (self)
-    {
+    if (self) {
+        self.parser = [DXDALParserJSON new];
         self.mapper = [DXDALMapperStandart new];
     }
     return self;

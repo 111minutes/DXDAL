@@ -6,10 +6,12 @@
 
 
 @class DXDALRequest;
+@class DXDALRequestHTTPPagination;
 @protocol DXDALDataProvider;
 
 
 typedef void (^DXDALRequestConfigurationBlock)(id request);
+typedef void (^DXDALPaginationRequestConfigurationBlock)(DXDALRequestHTTPPagination *request);
 
 @protocol DXDALRequestFactoryProtocol <NSObject>
 
@@ -18,11 +20,14 @@ typedef void (^DXDALRequestConfigurationBlock)(id request);
 - (id <DXDALDataProvider>)getDataProvider;
 - (Class)getDefaultRequestClass;
 
-- (DXDALRequest*)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock;
-- (DXDALRequest*)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock requestClass:(Class)RequestClass;
+- (DXDALRequest *)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock;
+- (DXDALRequest *)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock requestClass:(Class)RequestClass;
+- (DXDALRequest *)buildPaginationRequestWithConfigBlock:(DXDALPaginationRequestConfigurationBlock)configBlock;
 
 - (void)addDefaultConfig:(DXDALRequestConfigurationBlock)configBlock;
-
 - (void)setupDefaults;
+
+- (Class)defaultRequestEntityClass;
+- (NSString*)defaultRequestEntitiesKey;
 
 @end
