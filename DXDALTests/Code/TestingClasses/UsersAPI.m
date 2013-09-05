@@ -12,17 +12,16 @@
 
 @implementation UsersAPI
 
-- (id <DXDALDataProvider>)getDataProvider {
-    return [[DXDALDataProviderHTTP alloc] initWithBaseURL:[NSURL URLWithString:@"http://0.0.0.0:3000"]];
-}
-
-- (Class)getDefaultRequestClass
+- (NSString *)baseURL
 {
-    return [DXDALRequestHTTP class];
+    return @"http://0.0.0.0:3000";
 }
 
-- (void)setupDefaults {
-    
+- (DXDALRequest *)headRequest
+{
+    return [self buildRequestWithConfigBlock:^(DXDALRequestHTTP *request) {
+        request.httpMethod = @"HEAD";
+    }];
 }
 
 - (DXDALRequest *)loginWithLogin:(NSString *)login password:(NSString *)password {

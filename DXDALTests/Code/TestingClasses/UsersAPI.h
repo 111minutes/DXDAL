@@ -6,11 +6,12 @@
 
 
 #import <Foundation/Foundation.h>
-#import "DXDALRequestFactory.h"
+#import "DXDALRequestFactoryHTTP.h"
 #import "User.h"
 
-@interface UsersAPI : DXDALRequestFactory
+@interface UsersAPI : DXDALRequestFactoryHTTP
 
+- (DXDALRequest *)headRequest;
 - (DXDALRequest *)loginWithLogin:(NSString *)login password:(NSString *)password;
 - (DXDALRequest *)signUpWithUser:(User*)user;
 

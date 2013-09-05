@@ -12,11 +12,10 @@
 #import "DXDALParser.h"
 #import "DXDALMapper.h"
 
-
 @implementation DXDALDataProviderHTTP
-@synthesize httpClient = _httpClient;
 
-- (id)initWithBaseURL:(NSURL*)aBaseURL {
+- (id)initWithBaseURL:(NSURL*)aBaseURL
+{
     self = [super init];
     if (self) {
         self.httpClient = [[DXDALHTTPClient alloc] initWithBaseURL:aBaseURL];
@@ -24,14 +23,15 @@
     return self;
 }
 
-- (void)enqueueRequest:(DXDALRequest *)aRequest {
+- (void)enqueueRequest:(DXDALRequest *)aRequest
+{
     assert(aRequest != nil);
     
     [_httpClient clearDefaultHeaders];
 
     DXDALRequestHTTP *httpRequest = (DXDALRequestHTTP*)aRequest;
-    if (httpRequest.defaultHTTPHeaders){
-        for (NSString *key in [httpRequest.defaultHTTPHeaders allKeys]){
+    if (httpRequest.defaultHTTPHeaders) {
+        for (NSString *key in [httpRequest.defaultHTTPHeaders allKeys]) {
             [_httpClient setDefaultHeader:key value:[httpRequest.defaultHTTPHeaders objectForKey:key]];
         }
     }
@@ -43,12 +43,18 @@
     [_httpClient enqueueHTTPRequestOperation:operation];
 }
 
-- (NSURLRequest*)urlRequestFromRequest:(DXDALRequestHTTP*) httpRequest
+- (NSURLRequest *)urlRequestFromRequest:(DXDALRequestHTTP *)httpRequest
 {
-    return [_httpClient requestWithMethod:httpRequest.httpMethod path:httpRequest.httpPath parameters:httpRequest.params];
+    NSMutableURLRequest *urlRequest = [_httpClient requestWithMethod:httpRequest.httpMethod
+                                                                path:httpRequest.httpPath
+                                                          parameters:httpRequest.params];
+    
+    urlRequest.timeoutInterval = httpRequest.timeoutInterval;
+    
+    return urlRequest;
 }
 
-- (AFHTTPRequestOperation*) operationFromRequest:(DXDALRequestHTTP*) httpRequest
+- (AFHTTPRequestOperation *) operationFromRequest:(DXDALRequestHTTP *) httpRequest
 {
     NSURLRequest *urlRequest = [self urlRequestFromRequest:httpRequest];
     NSLog(@"start request: %@", [urlRequest URL]);
@@ -68,6 +74,10 @@
     };
     [operation setDownloadProgressBlock:progressBlock];
     
+    if (httpRequest.needsBackgrounding) {
+        [operation setShouldExecuteAsBackgroundTaskWithExpirationHandler:nil];
+    }
+    
     return operation;
 }
 
@@ -77,7 +87,6 @@
         [httpRequest didFinishWithResponseString:operation.responseString
                                   responseObject:responseObject
                               responseStatusCode:operation.response.statusCode];
-        
     };
 }
 

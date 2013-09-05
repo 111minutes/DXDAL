@@ -21,11 +21,8 @@
 @end
 
 @implementation DXDALRequest {
-    
     __unsafe_unretained id<DXDALDataProvider> _dataProvider;
 }
-
-@synthesize params = _params;
 
 - (id)initWithDataProvider:(id<DXDALDataProvider>)dataProvider {
     assert(dataProvider != nil);
@@ -47,8 +44,7 @@
     assert(key != nil);
     assert(param != nil);
     
-    if (_params == nil)
-    {
+    if (_params == nil) {
         _params = [NSMutableDictionary new];
     }
     [_params setObject:param forKey:key];
@@ -66,8 +62,7 @@
        [param isKindOfClass:[NSDictionary class]]
        )
     {
-        if (_params == nil)
-        {
+        if (_params == nil) {
             _params = [NSMutableDictionary new];
         }
         [_params setObject:param forKey:key];

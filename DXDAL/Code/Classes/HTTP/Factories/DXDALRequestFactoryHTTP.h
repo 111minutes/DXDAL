@@ -10,4 +10,6 @@
 
 @interface DXDALRequestFactoryHTTP : DXDALRequestFactory
 
+- (NSString *) baseURL;
+
 @end

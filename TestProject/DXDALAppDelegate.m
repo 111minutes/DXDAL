@@ -30,12 +30,12 @@
     u.username = @"test3";
     u.age = @"100";
     
-    DXDALRequest *request = [api signUpWithUser:u];
+    DXDALRequest *request = [api headRequest];
     
     [request addSuccessHandler:^(id response){
         NSLog(@"Response = %@", response);
     }];
-    
+
     [request addErrorHandler:^(NSError *error){
         NSLog(@"Error = %@", [error userInfo]);
     }];

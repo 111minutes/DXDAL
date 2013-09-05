@@ -14,11 +14,8 @@
 
 typedef void (^DXDALRequestDidStartHandler)(DXDALRequest *request);
 typedef void (^DXDALRequestDidStopHandler)(DXDALRequest *request);
-
 typedef void (^DXDALRequestSuccesHandler)(id response);
-
 typedef void (^DXDALRequestErrorHandler)(NSError *error);
-
 typedef void (^DXDALProgressHandler)(float currentProgress, float progressDelta);
 
 @interface DXDALRequest : NSObject 
@@ -29,19 +26,13 @@ typedef void (^DXDALProgressHandler)(float currentProgress, float progressDelta)
 
 - (void)addRequestDidStartHandler:(DXDALRequestDidStartHandler)handler;
 - (void)addRequestDidStopHandler:(DXDALRequestDidStopHandler)handler;
-
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler;
-
 - (void)addErrorHandler:(DXDALRequestErrorHandler)handler;
-
 - (void)addProgressHandler:(DXDALProgressHandler)handler;
 
 - (void)start;
-
 - (void)stop;
-
 - (void)pause;
-
 - (void)resume;
 
 - (void)addParamString:(NSString *)param withName:(NSString *)key NS_DEPRECATED_IOS(4_0, 4_0);

@@ -12,16 +12,16 @@
 @interface DXDALRequestFactory ()
 
 @property (nonatomic, readwrite, strong) id<DXDALDataProvider> dataProvider;
+@property (nonatomic, strong) NSMutableArray *defaultConfigBlocks;
 
 @end
 
-@implementation DXDALRequestFactory {
-    NSMutableArray *_defaultConfigBlocks;
-}
+@implementation DXDALRequestFactory
 
 @synthesize dataProvider;
 
-- (id <DXDALDataProvider>)getDataProvider {
+- (id <DXDALDataProvider>)getDataProvider
+{
     NSAssert(NO, @"Override this method in subclasses!");
     return nil;
 }
@@ -32,7 +32,8 @@
     return nil;
 }
 
-- (id)init {
+- (id)init
+{
     self = [super init];
     if (self) {
         _defaultConfigBlocks = [NSMutableArray new];
@@ -46,17 +47,36 @@
     return self;
 }
 
-- (DXDALRequest *)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock {
+- (Class)defaultRequestEntityClass
+{
+    return Nil;
+}
+
+- (NSString *)defaultRequestEntitiesKey
+{
+    return nil;
+}
+
+- (DXDALRequest *)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock
+{
 	return [self buildRequestWithConfigBlock:configBlock requestClass:nil];
 }
 
-- (DXDALRequest *)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock requestClass:(Class)RequestClass {
+- (DXDALRequest *)buildPaginationRequestWithConfigBlock:(DXDALPaginationRequestConfigurationBlock)configBlock;
+{
+    return [self buildRequestWithConfigBlock:configBlock requestClass:[DXDALRequestHTTPPagination class]];
+}
+
+- (DXDALRequest *)buildRequestWithConfigBlock:(DXDALRequestConfigurationBlock)configBlock requestClass:(Class)RequestClass
+{
     assert(configBlock != nil);
 
 	DXDALRequest *request = nil;
 
-	if(!RequestClass)
+	if(!RequestClass) {
         RequestClass = [self getDefaultRequestClass];
+    }
+    
     request = [[RequestClass alloc] initWithDataProvider:self.dataProvider];
 
     assert(request != nil);
@@ -75,7 +95,8 @@
 
 }
 
-- (void)addDefaultConfig:(DXDALRequestConfigurationBlock)configBlock {
+- (void)addDefaultConfig:(DXDALRequestConfigurationBlock)configBlock
+{
     assert(configBlock != nil);
     
     [_defaultConfigBlocks addObject:configBlock];
