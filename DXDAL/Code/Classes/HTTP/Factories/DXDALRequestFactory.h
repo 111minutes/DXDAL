@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DXDALRequestFactoryProtocol.h"
+#import "DXDALRequestHTTPPagination.h"
 
 @class DXDALRequestHTTP;
 @class DXDALRequestHTTPPagination;

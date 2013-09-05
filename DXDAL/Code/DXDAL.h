@@ -21,7 +21,6 @@
 #import "DXDALDataProviderHTTPCached.h"
 #import "DXDALDataProviderMultipartForm.h"
 #import "DXDALDataProviderMultipartFormStreaming.h"
-#import "DXDALDataProviderRawData.h"
 
 #import "DXDALParser.h"
 #import "DXDALParserJSON.h"
