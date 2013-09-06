@@ -19,9 +19,11 @@
         if ([result[self.entitiesKey] isKindOfClass:[NSArray class]]) {
             parserResult = [[NSArray alloc] initWithArray:result[self.entitiesKey]];
         }
+    } else if ([result isKindOfClass:[NSArray class]]) {
+        parserResult = result;
     }
     
-    return parserResult ? : result;
+    return parserResult;
 }
 
 @end

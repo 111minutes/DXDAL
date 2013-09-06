@@ -32,6 +32,8 @@
 		BC1ABAD417D89FF500E5A5A0 /* DXDALPaginationParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BC1ABAD217D89FF500E5A5A0 /* DXDALPaginationParser.h */; };
 		BC1ABAD517D89FF500E5A5A0 /* DXDALPaginationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1ABAD317D89FF500E5A5A0 /* DXDALPaginationParser.m */; };
 		BCC504E7169ECAAF00C5EBF1 /* DXDALAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA51C21500E4FB004F3003 /* DXDALAppDelegate.m */; };
+		BCCB2B8C17DA1D28005DA6B2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9CC4DF150027E700FEBE10 /* SystemConfiguration.framework */; };
+		BCCB2B8E17DA1D53005DA6B2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCCB2B8D17DA1D52005DA6B2 /* MobileCoreServices.framework */; };
 		E75589B616303F1000A1595C /* DXDALDataProviderHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = E755899816303F1000A1595C /* DXDALDataProviderHTTP.h */; };
 		E75589B716303F1000A1595C /* DXDALDataProviderHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = E755899916303F1000A1595C /* DXDALDataProviderHTTP.m */; };
 		E75589B816303F1000A1595C /* DXDALDataProviderHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = E755899916303F1000A1595C /* DXDALDataProviderHTTP.m */; };
@@ -122,6 +124,7 @@
 		BB311C521B0F439C8B445314 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1ABAD217D89FF500E5A5A0 /* DXDALPaginationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALPaginationParser.h; sourceTree = "<group>"; };
 		BC1ABAD317D89FF500E5A5A0 /* DXDALPaginationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALPaginationParser.m; sourceTree = "<group>"; };
+		BCCB2B8D17DA1D52005DA6B2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E755899816303F1000A1595C /* DXDALDataProviderHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALDataProviderHTTP.h; sourceTree = "<group>"; };
 		E755899916303F1000A1595C /* DXDALDataProviderHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDALDataProviderHTTP.m; sourceTree = "<group>"; };
 		E755899A16303F1000A1595C /* DXDALDataProviderMultipartForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDALDataProviderMultipartForm.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCCB2B8E17DA1D53005DA6B2 /* MobileCoreServices.framework in Frameworks */,
+				BCCB2B8C17DA1D28005DA6B2 /* SystemConfiguration.framework in Frameworks */,
 				ADDC38DB15002300007349BC /* Foundation.framework in Frameworks */,
 				F7DD19BE85CF4147A5626576 /* libPods.a in Frameworks */,
 			);
@@ -262,6 +267,7 @@
 		ADDC38CC15002300007349BC = {
 			isa = PBXGroup;
 			children = (
+				BCCB2B8D17DA1D52005DA6B2 /* MobileCoreServices.framework */,
 				ADDC38DC15002300007349BC /* DXDAL */,
 				ADBA51B81500E4FB004F3003 /* TestProject */,
 				ADDC38D915002300007349BC /* Frameworks */,

@@ -36,11 +36,10 @@
 {
     self = [super init];
     if (self) {
-        _defaultConfigBlocks = [NSMutableArray new];
-
+        self.defaultConfigBlocks = [NSMutableArray new];
         self.dataProvider = [self getDataProvider];
         
-        assert(self.dataProvider != nil);
+        NSAssert(self.dataProvider != nil, @"data provider for DXDALRequestFactory can't be nil");
         
         [self setupDefaults];
     }
@@ -81,7 +80,7 @@
 
     assert(request != nil);
 
-    for (id block in _defaultConfigBlocks) {
+    for (id block in self.defaultConfigBlocks) {
         DXDALRequestConfigurationBlock configurationBlock = block;
         configurationBlock(request);
     }
@@ -91,7 +90,8 @@
     return request;
 }
 
-- (void)setupDefaults {
+- (void)setupDefaults
+{
 
 }
 
@@ -99,7 +99,7 @@
 {
     assert(configBlock != nil);
     
-    [_defaultConfigBlocks addObject:configBlock];
+    [self.defaultConfigBlocks addObject:configBlock];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "DXDALRequestHTTPPagination.h"
 #import "DXDALPaginationParser.h"
+#import "DXDALMapperStandart.h"
 
 @implementation DXDALRequestHTTPPagination
 
@@ -59,6 +60,31 @@
 {
     _startPageNumber = aStartPageNumber;
     currentPage = _startPageNumber;
+}
+
+- (void) didFinishWithResponseString:(NSString *)responseString
+                      responseObject:(id)responseObject
+                  responseStatusCode:(NSInteger)responseStatusCode
+{
+    if (responseString != nil) {
+        
+        NSParameterAssert(self.parser);
+        NSParameterAssert(self.entityClass);
+        NSParameterAssert(self.mapper);
+
+        id parsedObject = [self.parser parseString:responseString];
+        
+        if (parsedObject) {
+            id result = [self.mapper mapFromInputData:parsedObject withClass:self.entityClass];
+            
+            [self didFinishWithResponse:result];
+        } else {
+            [self didFinishWithResponse:@[]];
+        }
+        
+    } else {
+        [self didFinishWithResponse:@[]];
+    }
 }
 
 @end

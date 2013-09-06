@@ -12,7 +12,6 @@
 @protocol DXDALParser;
 @protocol DXDALMapper;
 
-
 @interface DXDALRequestHTTP : DXDALRequest
 
 @property(nonatomic, readwrite, strong) NSString *httpMethod;
@@ -30,9 +29,8 @@
 @property (nonatomic, assign) NSTimeInterval timeoutInterval;
 @property (nonatomic, assign) BOOL needsBackgrounding;
 
-
-- (void) didFinishWithResponseString:(NSString *)responseString 
-                      responseObject:(id)responseObject 
+- (void) didFinishWithResponseString:(NSString *)responseString
+                      responseObject:(id)responseObject
                   responseStatusCode:(NSInteger)responseStatusCode;
 
 @end

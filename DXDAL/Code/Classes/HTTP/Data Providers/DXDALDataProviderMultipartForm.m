@@ -36,7 +36,7 @@
     
     DXDALRequestMultipartForm* httpRequest = (DXDALRequestMultipartForm*)aHttpRequest;
     
-    __block NSString *videoURL = httpRequest.fileURLstring;
+    __block NSString *fileURL = httpRequest.fileURLstring;
     __block NSInteger prevNotificationBytesCount = 0;
     
     [operation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
@@ -49,7 +49,7 @@
                 prevNotificationBytesCount = totalBytesWritten;
                 
                 NSMutableDictionary *params = [NSMutableDictionary new];
-                [params setValue:videoURL forKey:VideoNotificationURL];
+                [params setValue:fileURL forKey:VideoNotificationURL];
                 float value = totalBytesWritten;
                 [params setValue:[NSNumber numberWithFloat:value/totalBytesExpectedToWrite] forKey:VideoNotificationProgress];
                 

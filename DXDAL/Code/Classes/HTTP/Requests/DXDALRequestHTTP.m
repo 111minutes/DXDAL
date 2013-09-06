@@ -8,6 +8,10 @@
 #import "DXDALMapperStandart.h"
 #import "DXDALParserJSON.h"
 
+@interface DXDALRequestHTTP ()
+
+@end
+
 @implementation DXDALRequestHTTP
 
 - (id) initWithDataProvider:(id<DXDALDataProvider>)dataProvider
@@ -16,11 +20,14 @@
     if (self) {
         self.parser = [DXDALParserJSON new];
         self.mapper = [DXDALMapperStandart new];
+        
+        
     }
     return self;
 }
 
-- (NSString*)httpMethod {
+- (NSString*)httpMethod
+{
     return [_httpMethod uppercaseString];
 }
 
@@ -55,14 +62,13 @@
     } else if ([responseObject isKindOfClass:[NSData class]]) {
         [self didFinishWithResponse:responseObject];
     } else {
-        [self didFinishWithResponse:@(responseStatusCode)];
+        [self didFinishWithResponse:nil];
     }
 }
 
 - (void)stop
 {
-    [_requestOperation cancel];
-    
+    [self.requestOperation cancel];
     [super stop];
 }
 

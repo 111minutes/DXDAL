@@ -12,11 +12,13 @@
 
 @class DXDALRequestResponse, DXDALRequest;
 
+typedef void (^DXDALUploadProgressHandler)(float currentUploadProgress, float uploadProgressDelta);
+typedef void (^DXDALDownloadProgressHandler)(float currentDownloadProgress, float downloadProgressDelta);
+
 typedef void (^DXDALRequestDidStartHandler)(DXDALRequest *request);
 typedef void (^DXDALRequestDidStopHandler)(DXDALRequest *request);
 typedef void (^DXDALRequestSuccesHandler)(id response);
 typedef void (^DXDALRequestErrorHandler)(NSError *error);
-typedef void (^DXDALProgressHandler)(float currentProgress, float progressDelta);
 
 @interface DXDALRequest : NSObject 
 
@@ -24,23 +26,26 @@ typedef void (^DXDALProgressHandler)(float currentProgress, float progressDelta)
 
 - (id)initWithDataProvider:(id<DXDALDataProvider>)dataProvider;
 
+- (void)addUploadProgressHandler:(DXDALUploadProgressHandler)handler;
+- (void)addDownloadProgressHandler:(DXDALDownloadProgressHandler)handler;
+
+- (void)didChangeUploadProgressValue:(float)progressValue progressDelta:(float)progressDelta;
+- (void)didChangeDownloadProgressValue:(float)progressValue progressDelta:(float)progressDelta;
+
 - (void)addRequestDidStartHandler:(DXDALRequestDidStartHandler)handler;
 - (void)addRequestDidStopHandler:(DXDALRequestDidStopHandler)handler;
 - (void)addSuccessHandler:(DXDALRequestSuccesHandler)handler;
 - (void)addErrorHandler:(DXDALRequestErrorHandler)handler;
-- (void)addProgressHandler:(DXDALProgressHandler)handler;
 
 - (void)start;
 - (void)stop;
 - (void)pause;
 - (void)resume;
 
-- (void)addParamString:(NSString *)param withName:(NSString *)key NS_DEPRECATED_IOS(4_0, 4_0);
 - (void)addParam:(NSObject*)param withName:(NSString *)key;
 
 - (void)didFinishWithResponse:(id)response;
 - (void)didFailWithResponse:(id)response;
-- (void)didChangeProgressValue:(float)progressValue progressDelta:(float)progressDelta;
 
 - (void)removeAllHandlers;
 

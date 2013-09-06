@@ -56,7 +56,7 @@
 
 - (NSDictionary *)cachedResponseDictionaryForRequest:(DXDALRequestHTTP *)request
 {
-    EGOCache *cache = [EGOCache currentCache];
+    EGOCache *cache = [EGOCache globalCache];
     NSData *plistData = [cache dataForKey:[self keyFromRequest:request]];
     NSDictionary *dictionary = [NSKeyedUnarchiver unarchiveObjectWithData:plistData];
     return dictionary;
@@ -103,7 +103,7 @@
         }
     }
     
-    EGOCache *cache = [EGOCache currentCache];
+    EGOCache *cache = [EGOCache globalCache];
     BOOL isExistsValue = [cache dataForKey:[self keyFromRequest:aRequest]] != nil;
     if (isExistsValue) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -128,7 +128,7 @@
 {
     return ^(AFHTTPRequestOperation *operation, id responseObject) {
                 
-        EGOCache *cache = [EGOCache currentCache];
+        EGOCache *cache = [EGOCache globalCache];
         NSDictionary *responseDictionary = [self dictionaryWithResponseString:operation.responseString
                                                                  responseData:responseObject
                                                                    statusCode:operation.response.statusCode];

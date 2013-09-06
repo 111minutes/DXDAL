@@ -65,14 +65,17 @@
                                                                              success:success
                                                                              failure:failure];
     
-    
-    void (^progressBlock)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead);
-    progressBlock = ^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+    [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
         float progress =  (float)totalBytesRead / (float)totalBytesExpectedToRead;
         float delta = (float)bytesRead / (float)totalBytesExpectedToRead;
-        [httpRequest didChangeProgressValue:progress progressDelta:delta];
-    };
-    [operation setDownloadProgressBlock:progressBlock];
+        [httpRequest didChangeDownloadProgressValue:progress progressDelta:delta];
+    }];
+    
+    [operation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+        float progress =  (float)totalBytesWritten / (float)totalBytesExpectedToWrite;
+        float delta = (float)bytesWritten / (float)totalBytesExpectedToWrite;
+        [httpRequest didChangeUploadProgressValue:progress progressDelta:delta];
+    }];
     
     if (httpRequest.needsBackgrounding) {
         [operation setShouldExecuteAsBackgroundTaskWithExpirationHandler:nil];

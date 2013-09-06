@@ -10,8 +10,4 @@
 
 @implementation DXDALRequestHTTPRawData
 
-- (void) didFinishWithResponseString:(NSString *)responseString responseObject:(id)responseObject responseStatusCode:(NSInteger)responseStatusCode {
-    [super didFinishWithResponseString:responseString responseObject:responseObject responseStatusCode:responseStatusCode];
-}
-
 @end
